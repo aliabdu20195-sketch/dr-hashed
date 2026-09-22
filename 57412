@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مستشفى الدكتور حاشد الطبر التخصصي</title>
+<meta name="description" content="احجز موعدك في عيادات مستشفى د. حاشد الطبر التخصصي في إب — باطنية، جراحة، نساء وولادة، أطفال وغيرها.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Markazi+Text:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<style>
+  :root{
+    --ink:#132621; --ink-soft:#3f5951; --paper:#F6F7F3; --card:#FFFFFF; --line:#DCE3DC;
+    --pine:#0B5E45; --pine-deep:#083F2F; --navy:#0E3B54; --clay:#C9622B; --clay-soft:#F3E3D6;
+    --gold:#C79A3A; --danger:#B23A2E; --ok:#1F8A5E; --warn:#B8862B;
+    --radius-s:10px; --radius-m:16px; --radius-l:28px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:80px;}
+  body{margin:0; font-family:'Tajawal',sans-serif; background:var(--paper); color:var(--ink); line-height:1.65; overflow-x:clip;}
+  h1,h2,h3{font-family:'Markazi Text',serif; margin:0; font-weight:700;}
+  a{color:inherit;} img{max-width:100%; display:block;} button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 22px;}
+  .hidden{display:none !important;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important; scroll-behavior:auto !important;} }
+
+  .topbar{background:var(--pine-deep); color:#EAF3EE; font-size:13.5px;}
+  .topbar .wrap{display:flex; justify-content:space-between; align-items:center; padding:8px 22px; gap:10px; flex-wrap:wrap;}
+  .topbar a{text-decoration:none; opacity:.92;} .topbar a:hover{opacity:1; text-decoration:underline;}
+
+  header.site{background:var(--card); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:40;}
+  .site .wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 22px; gap:18px;}
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+  .brand-name{display:flex; flex-direction:column; line-height:1.25;}
+  .brand-name b{font-size:18px; font-weight:700; color:var(--pine-deep);}
+  .brand-name span{font-size:12px; color:var(--ink-soft);}
+  nav.main{display:flex; gap:24px; font-size:15px; font-weight:500;}
+  nav.main a{text-decoration:none; color:var(--ink-soft); padding:6px 2px; border-bottom:2px solid transparent; cursor:pointer;}
+  nav.main a:hover{color:var(--pine-deep); border-color:var(--clay);}
+  .cta-call{display:flex; align-items:center; gap:8px; background:var(--pine); color:#fff; text-decoration:none;
+    padding:10px 18px; border-radius:999px; font-weight:700; font-size:14.5px; white-space:nowrap; border:none;}
+  .cta-call:hover{background:var(--pine-deep);}
+  .menu-btn{display:none; background:none; border:1.5px solid var(--line); border-radius:10px; width:42px; height:42px; font-size:20px; color:var(--pine-deep);}
+
+  .hero{background:radial-gradient(600px 300px at 85% -10%, rgba(199,154,58,.15), transparent 60%),
+      linear-gradient(180deg, #0B5E45 0%, #0A4F3B 60%, #083F2F 100%); color:#fff; overflow:hidden; position:relative;}
+  .hero .wrap{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; padding:60px 22px 50px; align-items:center;}
+  .eyebrow-plain{color:#CFE8DC; font-size:14.5px; margin-bottom:14px;}
+  .hero h1{font-size:42px; line-height:1.18; color:#fff; font-weight:700; max-width:15ch;}
+  .hero p.lead{margin-top:16px; font-size:16.5px; color:#DDEDE4; max-width:46ch;}
+  .hero-actions{display:flex; gap:14px; margin-top:26px; flex-wrap:wrap;}
+  .btn{border:none; border-radius:999px; padding:14px 26px; font-size:15.5px; font-weight:700; text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;}
+  .btn-clay{background:var(--clay); color:#fff;} .btn-clay:hover{background:#A9501F;}
+  .btn-outline{background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.55);}
+  .btn-outline:hover{background:rgba(255,255,255,.1);}
+  .hero-stats{display:flex; gap:26px; margin-top:32px; flex-wrap:wrap;}
+  .hero-stats div b{display:block; font-size:24px; font-family:'Markazi Text',serif;}
+  .hero-stats div span{font-size:13px; color:#C9E3D6;}
+  .hero-art{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15); border-radius:var(--radius-l); padding:24px;}
+  .hero-art svg{width:100%; height:auto; display:block;}
+  .hero-photo{padding:0; overflow:hidden;}
+  .hero-photo img{width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block;}
+  .hero-photo svg{padding:24px;}
+
+  section{padding:64px 0;}
+  .section-head{max-width:60ch; margin-bottom:34px;}
+  .section-head .kicker{color:var(--clay); font-weight:700; font-size:14px; margin-bottom:8px;}
+  .section-head h2{font-size:32px; color:var(--pine-deep);}
+  .section-head p{color:var(--ink-soft); margin-top:10px; font-size:15.5px;}
+
+  .clinics-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .clinic-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-m); padding:20px 18px;
+    display:flex; flex-direction:column; gap:10px;}
+  .clinic-icon{width:42px; height:42px; border-radius:12px; background:var(--clay-soft); display:flex; align-items:center; justify-content:center;}
+  .clinic-icon svg{width:22px; height:22px; stroke:var(--clay);}
+  .clinic-card h3{font-size:18px; color:var(--pine-deep); font-family:'Tajawal',sans-serif; font-weight:700;}
+  .clinic-card p{font-size:13px; color:var(--ink-soft); margin:0; flex:1;}
+  .clinic-card .book-btn{align-self:flex-start; background:none; border:none; color:var(--pine); font-weight:700; text-decoration:none;
+    font-size:13.5px; padding:4px 0; border-bottom:1.5px solid var(--pine);}
+  .clinic-card .book-btn:hover{color:var(--clay); border-color:var(--clay);}
+  .clinic-card .soft-note{align-self:flex-start; font-size:13px; color:var(--ink-soft); font-weight:700;}
+  .doctor-tags{display:flex; flex-wrap:wrap; gap:6px;}
+  .doctor-tags span{font-size:11px; background:var(--paper); border:1px solid var(--line); padding:3px 8px; border-radius:999px; color:var(--ink-soft);}
+
+  .consult{background:var(--navy); color:#fff; border-radius:var(--radius-l); display:grid; grid-template-columns:1.3fr 1fr;
+    gap:30px; padding:38px; align-items:center;}
+  .consult h3{font-size:24px; color:#fff; max-width:22ch;}
+  .consult p{color:#C9D8E3; margin-top:10px; font-size:14.5px; max-width:48ch;}
+  .consult-actions{display:flex; flex-direction:column; gap:12px;}
+  .consult .btn-clay{justify-content:center;}
+  .consult .btn-wa{background:#1F8A5E; color:#fff; justify-content:center;}
+  .consult .btn-wa:hover{background:#186E4B;}
+
+  .booking{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-l); overflow:hidden;}
+  .booking-head{background:linear-gradient(120deg, var(--pine-deep), var(--pine)); color:#fff; padding:28px 32px;}
+  .booking-head h2{color:#fff; font-size:26px;}
+  .booking-head p{color:#D7ECE2; margin-top:6px; font-size:14px;}
+  .booking-body{padding:32px;}
+  fieldset{border:none; padding:0; margin:0 0 32px; min-width:0;}
+  legend{display:flex; align-items:center; gap:10px; font-weight:700; font-size:16.5px; color:var(--pine-deep);
+    padding:0 0 16px; width:100%; border-bottom:1px solid var(--line); margin-bottom:20px;}
+  legend .dot{width:8px; height:8px; border-radius:50%; background:var(--clay); flex-shrink:0;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field label{font-size:13px; font-weight:700; color:var(--ink);}
+  .field input, .field select, .field textarea{border:1.5px solid var(--line); border-radius:var(--radius-s);
+    padding:12px 14px; font-size:14.5px; font-family:inherit; background:#FCFDFB; color:var(--ink); width:100%;}
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--pine); background:#fff;}
+  .field textarea{resize:vertical; min-height:80px;}
+  .age-row{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .computed-date{background:var(--clay-soft); border:1px dashed var(--clay); padding:12px 14px; border-radius:var(--radius-s);
+    font-weight:700; color:var(--pine-deep); font-size:14.5px; text-align:center;}
+  .toggle-row{display:flex; align-items:center; justify-content:space-between; gap:14px; border:1px solid var(--line);
+    border-radius:var(--radius-s); padding:14px 16px; background:#FCFDFB;}
+  .pay-fields{display:none; margin-top:16px; grid-template-columns:1fr 1fr; gap:16px;}
+  .pay-fields.show{display:grid;}
+  .type-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .type-opt{flex:1; min-width:210px; display:flex; align-items:center; gap:10px; border:1.5px solid var(--line);
+    border-radius:var(--radius-s); padding:14px 16px; background:#FCFDFB; font-weight:700; cursor:pointer; font-size:14.5px;}
+  .type-opt input{width:18px; height:18px; accent-color:var(--pine);}
+  .type-opt:has(input:checked){border-color:var(--pine); background:#EAF5EE;}
+  .hp{position:absolute; width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; opacity:0; pointer-events:none;}
+  .submit-btn{background:var(--pine); color:#fff; border:none; border-radius:999px; padding:16px 34px; font-size:15.5px;
+    font-weight:700; width:100%;}
+  .submit-btn:disabled{opacity:.6; cursor:wait;}
+  .submit-btn:not(:disabled):hover{background:var(--pine-deep);}
+  .err{color:var(--danger); font-size:12px; min-height:1em;}
+  .field.error input, .field.error select, .field.error textarea{border-color:var(--danger); background:#FBF0EF;}
+  .confirm-box{display:none; margin-top:24px; background:#EAF5EE; border:1px solid #BEE0CC; border-radius:var(--radius-m);
+    padding:22px; text-align:center;}
+  .confirm-box.show{display:block;}
+  .confirm-box h3{color:var(--pine-deep); font-size:20px;}
+  .confirm-box p{color:var(--ink-soft); font-size:14px; margin-top:8px;}
+  .ref-code{display:inline-block; margin-top:12px; background:#fff; border:1px dashed var(--pine); padding:8px 18px;
+    border-radius:8px; font-weight:700; letter-spacing:1px; color:var(--pine-deep);}
+  .confirm-actions{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:16px;}
+  .confirm-actions .btn{padding:11px 20px; font-size:14px;}
+  .btn-wa-solid{background:#1F8A5E; color:#fff;} .btn-wa-solid:hover{background:#186E4B;}
+  .btn-ghost{background:#fff; color:var(--pine-deep); border:1.5px solid var(--pine);}
+  .form-alert{display:none; background:#FBF0EF; border:1px solid #E3B7B0; color:var(--danger); padding:12px 16px;
+    border-radius:var(--radius-s); font-size:13.5px; margin-bottom:20px;}
+  .form-alert.show{display:block;}
+
+  .track-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-m); padding:26px; max-width:720px;}
+  .track-row{display:grid; grid-template-columns:1fr 1fr auto; gap:12px; align-items:end;}
+  .track-result{display:none; margin-top:18px; border:1px solid var(--line); border-radius:var(--radius-s); padding:16px; background:#FCFDFB; font-size:14px;}
+  .track-result.show{display:block;}
+  .track-result dl{margin:0 0 12px; display:grid; grid-template-columns:auto 1fr; gap:6px 14px;}
+  .track-result dt{color:var(--ink-soft); font-weight:700;} .track-result dd{margin:0;}
+  .danger-btn{background:#fff; color:var(--danger); border:1.5px solid var(--danger); border-radius:999px; padding:8px 18px; font-weight:700; font-size:13.5px;}
+  .danger-btn:hover{background:#FBF0EF;}
+
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .why-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-m); padding:22px;}
+  .why-card b{display:block; color:var(--pine-deep); font-size:16px; margin-bottom:8px;}
+  .why-card p{font-size:13.5px; color:var(--ink-soft); margin:0;}
+
+  footer{background:var(--pine-deep); color:#DCEAE2; padding:50px 0 24px;}
+  .foot-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:36px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.12);}
+  footer h4{color:#fff; font-size:15px; margin:0 0 12px;}
+  footer .brand-name b{color:#fff;} footer .brand-name span{color:#B9D3C6;}
+  footer p{font-size:13px; color:#B9D3C6; margin-top:10px; max-width:38ch;}
+  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px; font-size:13.5px;}
+  footer a{text-decoration:none; color:#DCEAE2;} footer a:hover{color:#fff; text-decoration:underline;}
+  .bottom-line{display:flex; justify-content:space-between; padding-top:18px; font-size:12px; color:#8FB4A1; flex-wrap:wrap; gap:10px;}
+  .staff-link{background:none; border:none; color:#8FB4A1; text-decoration:underline; font-size:12px; padding:0;}
+
+  /* ---- modal ---- */
+  .modal-overlay{position:fixed; inset:0; background:rgba(8,20,16,.55); display:none; align-items:center; justify-content:center; z-index:100; padding:20px;}
+  .modal-overlay.show{display:flex;}
+  .modal-box{background:#fff; border-radius:var(--radius-m); padding:28px; max-width:380px; width:100%;}
+  .modal-box h3{font-size:20px; color:var(--pine-deep); margin-bottom:6px;}
+  .modal-box p{font-size:13px; color:var(--ink-soft); margin:0 0 16px;}
+  .modal-box .field{margin-bottom:12px;}
+  .modal-actions{display:flex; gap:10px; margin-top:16px;}
+  .modal-actions button{flex:1; border-radius:var(--radius-s); padding:11px; font-weight:700; font-size:14px; border:none;}
+  .modal-cancel{background:var(--paper); color:var(--ink-soft);}
+  .modal-confirm{background:var(--pine); color:#fff;}
+  .modal-confirm:disabled{opacity:.6;}
+
+  /* ---- admin ---- */
+  #adminSite{display:none;}
+  .admin-header{background:var(--pine-deep); color:#fff; padding:16px 0;}
+  .admin-header .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+  .admin-header b{font-size:17px;}
+  .admin-header .hdr-actions{display:flex; gap:8px; flex-wrap:wrap;}
+  .admin-header button{background:rgba(255,255,255,.12); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-size:13.5px;}
+  .admin-header button:hover{background:rgba(255,255,255,.22);}
+  .admin-tabs{display:flex; gap:6px; background:#fff; border-bottom:1px solid var(--line); padding:0 22px; overflow-x:auto;}
+  .admin-tab{padding:14px 18px; font-size:14.5px; font-weight:700; color:var(--ink-soft); border-bottom:3px solid transparent; background:none; border-top:none; border-inline:none; white-space:nowrap;}
+  .admin-tab.active{color:var(--pine-deep); border-color:var(--clay);}
+  .admin-body{padding:28px 0 60px;}
+  .stat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:26px;}
+  .stat-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-m); padding:18px;}
+  .stat-card b{display:block; font-size:26px; color:var(--pine-deep); font-family:'Markazi Text',serif;}
+  .stat-card span{font-size:12.5px; color:var(--ink-soft);}
+  .filter-bar{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; align-items:flex-end;}
+  .filter-bar .field{min-width:150px;}
+  .filter-bar input, .filter-bar select{padding:9px 12px; font-size:13.5px;}
+  .btn-sm{padding:9px 16px; border-radius:8px; font-size:13px; font-weight:700; border:1px solid var(--line); background:#fff;}
+  .btn-sm:hover{border-color:var(--pine);}
+  .table-wrap{background:#fff; border:1px solid var(--line); border-radius:var(--radius-m); overflow:auto;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:900px;}
+  th, td{padding:12px 14px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap;}
+  th{background:var(--paper); color:var(--ink-soft); font-weight:700; font-size:12.5px;}
+  tr:last-child td{border-bottom:none;}
+  .badge{padding:4px 10px; border-radius:999px; font-size:11.5px; font-weight:700;}
+  .badge-pending{background:#FCEFDA; color:var(--warn);}
+  .badge-confirmed{background:#E1F3E8; color:var(--ok);}
+  .badge-done{background:#E4EAF3; color:var(--navy);}
+  .badge-cancelled{background:#FBE7E5; color:var(--danger);}
+  .badge-consult{background:#E4EAF3; color:var(--navy); margin-inline-start:6px;}
+  .row-actions{display:flex; gap:6px;}
+  .row-actions button{border:none; background:var(--paper); border-radius:6px; padding:6px 9px; font-size:11.5px; font-weight:700;}
+  .row-actions button:hover{background:var(--line);}
+  .empty-note{padding:40px; text-align:center; color:var(--ink-soft); font-size:14px;}
+
+  .manage-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .gallery-manage{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px;}
+  .gallery-item{background:#fff; border:1px solid var(--line); border-radius:var(--radius-s); overflow:hidden;}
+  .gallery-item .thumb{width:100%; aspect-ratio:4/3; object-fit:cover; background:var(--paper);}
+  .gallery-item .gi-body{padding:8px 10px; display:flex; justify-content:space-between; align-items:center; gap:6px;}
+  .gallery-item .gi-body span{font-size:12px; color:var(--ink-soft); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .gallery-item .gi-body button{border:none; background:none; color:var(--danger); font-weight:700; font-size:12px; flex-shrink:0;}
+  .role-badge{padding:3px 9px; border-radius:999px; font-size:11.5px; font-weight:700;}
+  .role-admin{background:#FBE7E5; color:var(--danger);}
+  .role-reception{background:#E1F3E8; color:var(--ok);}
+  .role-doctor{background:#E4EAF3; color:var(--navy);}
+  .clinic-photo{width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:12px; margin-bottom:4px;}
+  .doctor-tags img.doc-avatar{width:16px; height:16px; border-radius:50%; object-fit:cover; margin-inline-end:4px; vertical-align:middle;}
+  .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .gallery-card{border-radius:var(--radius-m); overflow:hidden; border:1px solid var(--line); background:#fff;}
+  .gallery-card img, .gallery-card video{width:100%; height:220px; object-fit:cover; display:block; background:#000;}
+  .gallery-card span{display:block; padding:10px 12px; font-size:13.5px; color:var(--ink-soft); font-weight:700;}
+  @media (max-width:920px){ .gallery-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .gallery-grid{grid-template-columns:1fr;} }
+  .manage-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-m); padding:20px;}
+  .manage-card h3{font-size:17px; color:var(--pine-deep); font-family:'Tajawal',sans-serif; margin-bottom:12px;}
+  .clinic-manage-item{background:#fff; border:1px solid var(--line); border-radius:var(--radius-s); padding:14px; margin-bottom:10px;}
+  .clinic-manage-item .cmi-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  .clinic-manage-item b{font-size:14.5px;}
+  .clinic-manage-item .doctor-tags span{display:flex; align-items:center; gap:6px;}
+  .clinic-manage-item .doctor-tags button{border:none; background:none; color:var(--danger); font-weight:700; cursor:pointer; font-size:12px;}
+  .mini-form{display:flex; gap:8px; margin-top:8px; flex-wrap:wrap; align-items:center;}
+  .mini-form input[type=text]{flex:1; min-width:120px; padding:8px 10px; border:1.5px solid var(--line); border-radius:8px; font-size:13px;}
+  .mini-form select, .mini-form textarea, .mini-form input[type=file]{padding:8px 10px; border:1.5px solid var(--line); border-radius:8px; font-size:13px; font-family:inherit; width:100%;}
+  .mini-form button{background:var(--pine); color:#fff; border:none; border-radius:8px; padding:8px 14px; font-size:12.5px; font-weight:700;}
+  .mini-form button:disabled{opacity:.6; cursor:wait;}
+  .mini-form label{font-size:12.5px; display:flex; align-items:center; gap:6px;}
+  .mini-form .err{width:100%;}
+  .del-clinic{background:none; border:none; color:var(--danger); font-size:12px; font-weight:700;}
+  .security-note{background:#FCEFDA; border:1px solid #E9C98A; color:#7A5A18; padding:14px 16px; border-radius:var(--radius-s); font-size:13px; margin-bottom:22px;}
+  .security-note.ok{background:#EAF5EE; border-color:#BEE0CC; color:#1B5B40;}
+  .load-note{padding:20px; text-align:center; color:var(--ink-soft); font-size:13.5px; grid-column:1/-1;}
+  .toast{position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:var(--pine-deep); color:#fff;
+    padding:12px 22px; border-radius:999px; font-size:13.5px; z-index:200; display:none; box-shadow:0 8px 24px rgba(0,0,0,.2); max-width:92vw; text-align:center;}
+  .toast.show{display:block;}
+
+  @media (max-width:920px){
+    nav.main{display:none;}
+    nav.main.open{display:flex; flex-direction:column; gap:4px; position:absolute; top:100%; right:0; left:0; background:#fff;
+      padding:14px 22px 18px; border-bottom:1px solid var(--line); box-shadow:0 12px 24px rgba(0,0,0,.08);}
+    nav.main.open a{padding:10px 0; font-size:16px;}
+    .menu-btn{display:block;}
+    .cta-call{display:none;}
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero h1{font-size:34px; max-width:none;}
+    .hero-art{order:-1;}
+    .clinics-grid{grid-template-columns:repeat(2,1fr);}
+    .grid2, .why-grid, .manage-grid{grid-template-columns:1fr;}
+    .consult{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr; gap:24px;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .track-row{grid-template-columns:1fr;}
+    .pay-fields{grid-template-columns:1fr;}
+  }
+  @media (max-width:520px){
+    .clinics-grid{grid-template-columns:1fr;}
+    .booking-body{padding:20px;}
+    .brand-name span{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PUBLIC SITE ============ -->
+<div id="publicSite">
+
+<div class="topbar">
+  <div class="wrap">
+    <span>الطوارئ العامة متاحة على مدار الساعة — 24/7</span>
+    <a href="#" id="topPhone" class="hidden"></a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#home">
+      <img src="logo.png" width="48" height="48" alt="شعار مستشفى د. حاشد الطبر التخصصي" style="border-radius:50%;"
+           onerror="this.style.display='none';document.getElementById('brandSvg').style.display='block';">
+      <svg id="brandSvg" style="display:none" width="44" height="44" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+        <circle cx="23" cy="23" r="22" stroke="#0B5E45" stroke-width="2" fill="#F6F7F3"/>
+        <path d="M23 12v22M12 23h22" stroke="#C9622B" stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">
+        <b>مستشفى د. حاشد الطبر التخصصي</b>
+        <span>Dr. Hashed Al-Taber Specialized Hospital</span>
+      </span>
+    </a>
+    <nav class="main" id="mainNav" aria-label="القائمة الرئيسية">
+      <a href="#home">الرئيسية</a>
+      <a href="#clinics">العيادات</a>
+      <a href="#booking">حجز موعد</a>
+      <a href="#track">تتبع حجزك</a>
+      <a href="#consult">استشارة طبية</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mainNav">☰</button>
+    <a class="cta-call" href="#booking">حجز طبي جديد</a>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow-plain">اليمن — إب، يريم</div>
+      <h1>رعاية طبية متخصصة، على بُعد حجز واحد منك</h1>
+      <p class="lead">
+        فريق طبي متكامل من الاستشاريين والأخصائيين، وعيادات مجهزة تغطي أغلب التخصصات،
+        مع نظام حجز إلكتروني يحفظ بياناتك ويتابعها فريق الاستقبال أولاً بأول.
+      </p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-clay">احجز موعدك الآن</a>
+        <a href="#clinics" class="btn btn-outline">تصفّح العيادات</a>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div><b id="statClinics">—</b><span>تخصصات طبية</span></div>
+        <div><b>24/7</b><span>طوارئ عامة</span></div>
+        <div><b>سريع</b><span>تأكيد الحجز</span></div>
+      </div>
+    </div>
+    <div class="hero-art hero-photo">
+      <img src="hospital.jpg" width="720" height="538" fetchpriority="high"
+           alt="واجهة مستشفى الدكتور حاشد الطبر التخصصي وقسم الطوارئ العامة"
+           onerror="this.style.display='none';document.getElementById('heroSvg').style.display='block';">
+      <svg id="heroSvg" style="display:none" aria-hidden="true" viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="90" width="280" height="150" rx="6" fill="#0E4A38"/>
+        <rect x="20" y="90" width="280" height="18" fill="#C9622B"/>
+        <rect x="45" y="130" width="34" height="40" rx="3" fill="#CFE8DC"/>
+        <rect x="95" y="130" width="34" height="40" rx="3" fill="#CFE8DC"/>
+        <rect x="191" y="130" width="34" height="40" rx="3" fill="#CFE8DC"/>
+        <rect x="241" y="130" width="34" height="40" rx="3" fill="#CFE8DC"/>
+        <rect x="140" y="180" width="40" height="60" rx="3" fill="#F6F7F3"/>
+        <path d="M155 205h10M160 200v10" stroke="#0E4A38" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M20 90c40-45 240-45 280 0" stroke="#C9622B" stroke-width="4" fill="none"/>
+        <circle cx="160" cy="35" r="16" fill="#C9622B"/>
+        <path d="M160 27v16M152 35h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M25 240h270" stroke="#0A3A2C" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="clinics">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">عياداتنا</div>
+      <h2>تخصصات طبية تحت سقف واحد</h2>
+      <p>اختر التخصص المناسب لحالتك، ثم أكمل حجزك مباشرة من نموذج الحجز أدناه.</p>
+    </div>
+    <div class="clinics-grid" id="clinicsGrid">
+      <div class="load-note">جاري تحميل قائمة العيادات...</div>
+    </div>
+  </div>
+</section>
+
+<section id="consult">
+  <div class="wrap">
+    <div class="consult">
+      <div>
+        <h3>غير متأكد من التخصص المناسب؟ اطلب استشارة أولية</h3>
+        <p>أرسل وصفاً موجزاً لحالتك وسيتواصل معك فريقنا الطبي لتوجيهك للعيادة المناسبة، أو لحجز موعد استشارة عن بُعد قبل الحضور للمستشفى.</p>
+      </div>
+      <div class="consult-actions">
+        <a href="#booking" class="btn btn-clay" id="consultBtn">طلب استشارة طبية</a>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-wa hidden" id="consultWa">تواصل عبر واتساب</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" style="padding-top:0;">
+  <div class="wrap">
+    <div class="booking">
+      <div class="booking-head">
+        <h2>نموذج الحجز الطبي</h2>
+        <p>عبّئ البيانات التالية بدقة — يصل طلبك لفريق الاستقبال وسيتواصلون معك لتأكيد الموعد.</p>
+      </div>
+      <div class="booking-body">
+        <div class="form-alert" id="formAlert" role="alert"></div>
+        <form id="bookingForm" novalidate>
+          <div class="hp" aria-hidden="true">
+            <label>لا تملأ هذا الحقل <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <fieldset>
+            <legend><span class="dot"></span>نوع الطلب</legend>
+            <div class="type-row">
+              <label class="type-opt"><input type="radio" name="reqType" value="appointment" checked> حجز موعد مع طبيب</label>
+              <label class="type-opt"><input type="radio" name="reqType" value="consult"> استشارة أولية (بدون موعد محدد)</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="dot"></span>بيانات المريض الأساسية</legend>
+            <div class="grid2">
+              <div class="field" id="f-phone">
+                <label for="phone">رقم جوال المريض</label>
+                <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="7XXXXXXXX" required>
+                <span class="err"></span>
+              </div>
+              <div class="field" id="f-name">
+                <label for="pname">اسم المريض رباعي</label>
+                <input id="pname" name="pname" type="text" autocomplete="name" placeholder="الاسم الأول الثاني الثالث واللقب" required>
+                <span class="err"></span>
+              </div>
+              <div class="field">
+                <label for="gender">الجنس</label>
+                <select id="gender" name="gender"><option value="ذكر">ذكر</option><option value="أنثى">أنثى</option></select>
+              </div>
+              <div class="field" id="f-age">
+                <label for="age">العمر</label>
+                <div class="age-row">
+                  <select id="ageUnit" name="ageUnit" aria-label="وحدة العمر"><option value="سنة">سنة</option><option value="شهر">شهر</option></select>
+                  <input id="age" name="age" type="number" min="0" max="120" inputmode="numeric" placeholder="العدد" required>
+                </div>
+                <span class="err"></span>
+              </div>
+              <div class="field" style="grid-column:1/-1;">
+                <label for="address">العنوان الحالي</label>
+                <input id="address" name="address" type="text" autocomplete="street-address" placeholder="المدينة / الحي / أقرب معلم">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset id="fs-appt">
+            <legend><span class="dot"></span>تخصيص عيادة وطبيب وموعد</legend>
+            <div class="grid2">
+              <div class="field" id="f-clinic">
+                <label for="clinicSelect">العيادة الطبية</label>
+                <select id="clinicSelect" required><option value="">-- اختر العيادة --</option></select>
+                <span class="err"></span>
+              </div>
+              <div class="field" id="f-doctor">
+                <label for="doctorSelect">الطبيب المختص</label>
+                <select id="doctorSelect" required disabled><option value="">-- اختر العيادة أولاً --</option></select>
+                <span class="err"></span>
+              </div>
+              <div class="field">
+                <label for="weekRange">نطاق الأسبوع المستهدف</label>
+                <select id="weekRange"><option value="0">الأسبوع الحالي</option><option value="1">الأسبوع القادم</option></select>
+              </div>
+              <div class="field" id="f-slot">
+                <label for="slotSelect">اليوم والوقت المتاح</label>
+                <select id="slotSelect" required disabled><option value="">-- اختر الطبيب أولاً --</option></select>
+                <span class="err"></span>
+              </div>
+            </div>
+            <div class="field" style="margin-top:16px;">
+              <label>تاريخ الحجز الفعلي المحسوب</label>
+              <div class="computed-date" id="computedDate" aria-live="polite">سيظهر التاريخ بعد اختيار اليوم والوقت</div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="dot"></span>ملاحظات طبية</legend>
+            <div class="field" id="f-notes">
+              <label for="notes" id="notesLabel">شكوى أو ملاحظات أولية للمريض</label>
+              <textarea id="notes" name="notes" maxlength="1000" placeholder="مثال: ألم مستمر منذ ٣ أيام، حساسية من دواء معين..."></textarea>
+              <span class="err"></span>
+            </div>
+            <div class="toggle-row" style="margin-top:16px;">
+              <label for="payToggle">إظهار بيانات الدفع المسبق والتحويل (اختياري)</label>
+              <input type="checkbox" id="payToggle" style="width:20px; height:20px;">
+            </div>
+            <div class="pay-fields" id="payFields">
+              <div class="field">
+                <label for="payMethod">طريقة الدفع</label>
+                <select id="payMethod"><option value="عند الحضور">الدفع عند الحضور</option><option value="تحويل بنكي">تحويل بنكي مسبق</option><option value="محفظة إلكترونية">محفظة إلكترونية</option></select>
+              </div>
+              <div class="field">
+                <label for="payRef">رقم إشعار التحويل (إن وجد)</label>
+                <input id="payRef" type="text" maxlength="80" placeholder="رقم العملية / الإشعار">
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="submit-btn" id="submitBtn">إرسال طلب الحجز</button>
+        </form>
+        <div class="confirm-box" id="confirmBox" role="status">
+          <h3 id="confirmTitle">تم استلام طلبك بنجاح ✅</h3>
+          <p id="confirmText"></p>
+          <span class="ref-code" id="refCode"></span>
+          <div class="confirm-actions">
+            <a href="#" target="_blank" rel="noopener" class="btn btn-wa-solid hidden" id="confirmWa">أرسل تفاصيل الحجز عبر واتساب</a>
+            <button type="button" class="btn btn-ghost" id="copyRef">نسخ رقم المرجع</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="track" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">متابعة الحجز</div>
+      <h2>تتبع حجزك أو ألغِه</h2>
+      <p>أدخل رقم المرجع الذي وصلك بعد الحجز مع رقم جوال المريض.</p>
+    </div>
+    <div class="track-card">
+      <div class="track-row">
+        <div class="field"><label for="trackRef">رقم المرجع</label><input id="trackRef" type="text" placeholder="HT-XXXXXX" autocomplete="off" dir="ltr" style="text-align:right;"></div>
+        <div class="field"><label for="trackPhone">رقم الجوال</label><input id="trackPhone" type="tel" inputmode="numeric" placeholder="7XXXXXXXX"></div>
+        <button type="button" class="btn btn-clay" id="trackBtn" style="height:46px;">بحث</button>
+      </div>
+      <div class="track-result" id="trackResult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="hidden">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">من نشاطاتنا</div>
+      <h2>صور وفيديوهات من المستشفى</h2>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">لماذا مستشفى حاشد الطبر</div>
+      <h2>رعاية واضحة الخطوات، من أول اتصال</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><b>حجز بلا انتظار</b><p>نموذج إلكتروني يحدد لك العيادة والطبيب والموعد الدقيق ويصل مباشرة لفريق الاستقبال.</p></div>
+      <div class="why-card"><b>طوارئ على مدار الساعة</b><p>قسم طوارئ عامة جاهز للاستقبال في أي وقت، بلا حاجة لحجز مسبق.</p></div>
+      <div class="why-card"><b>تخصصات متعددة</b><p>عيادات باطنية وجراحية ونسائية وأطفال وغيرها تحت سقف واحد.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand-name"><b>مستشفى د. حاشد الطبر التخصصي</b><span>Dr. Hashed Al-Taber Specialized Hospital</span></div>
+        <p id="footAddress">الجمهورية اليمنية — إب</p>
+      </div>
+      <div>
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li id="footPhoneLi" class="hidden">📞 <span id="footPhones"></span></li>
+          <li id="footWaLi" class="hidden">💬 <a href="#" id="footWa" target="_blank" rel="noopener">واتساب المستشفى</a></li>
+          <li id="footMapLi" class="hidden">📍 <a href="#" id="footMap" target="_blank" rel="noopener">الموقع على الخريطة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#clinics">العيادات</a></li>
+          <li><a href="#booking">حجز موعد</a></li>
+          <li><a href="#track">تتبع حجزك</a></li>
+          <li><a href="#consult">استشارة طبية</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-line">
+      <span>© مستشفى د. حاشد الطبر التخصصي</span>
+      <button class="staff-link" id="openStaffLogin" type="button">دخول الموظفين / لوحة التحكم</button>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<!-- ============ ADMIN SITE ============ -->
+<div id="adminSite">
+  <div class="admin-header">
+    <div class="wrap">
+      <b>لوحة تحكم مستشفى حاشد الطبر</b>
+      <div class="hdr-actions">
+        <button id="backToSite" type="button">← الموقع العام</button>
+        <button id="logoutBtn" type="button">تسجيل الخروج</button>
+      </div>
+    </div>
+  </div>
+  <div class="admin-tabs" role="tablist">
+    <button class="admin-tab active" data-tab="dash" role="tab">الحجوزات</button>
+    <button class="admin-tab hidden" data-tab="manage" role="tab" id="tabBtnManage">العيادات والأطباء</button>
+    <button class="admin-tab hidden" data-tab="media" role="tab" id="tabBtnMedia">الصور والفيديو</button>
+    <button class="admin-tab hidden" data-tab="team" role="tab" id="tabBtnTeam">الطاقم الوظيفي</button>
+    <button class="admin-tab hidden" data-tab="profile" role="tab" id="tabBtnProfile">ملفي كطبيب</button>
+  </div>
+  <div class="admin-body">
+    <div class="wrap">
+
+      <div class="security-note" id="modeNote"></div>
+
+      <div id="tab-dash">
+        <div class="stat-grid" id="statGrid">
+          <div class="stat-card"><b>—</b><span>إجمالي الطلبات</span></div>
+          <div class="stat-card"><b>—</b><span>مواعيد اليوم</span></div>
+          <div class="stat-card"><b>—</b><span>بانتظار التأكيد</span></div>
+          <div class="stat-card"><b>—</b><span>تم تأكيدها</span></div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="field">
+            <label for="searchInput">بحث بالاسم أو الجوال أو المرجع</label>
+            <input id="searchInput" type="text" placeholder="اكتب للبحث...">
+          </div>
+          <div class="field">
+            <label for="filterClinic">العيادة</label>
+            <select id="filterClinic"><option value="">كل العيادات</option></select>
+          </div>
+          <div class="field">
+            <label for="filterStatus">الحالة</label>
+            <select id="filterStatus">
+              <option value="">كل الحالات</option>
+              <option value="pending">بانتظار التأكيد</option>
+              <option value="confirmed">مؤكد</option>
+              <option value="done">تمت المعاينة</option>
+              <option value="cancelled">ملغي</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="filterDate">تاريخ الموعد</label>
+            <input id="filterDate" type="date">
+          </div>
+          <button class="btn-sm" id="refreshBtn" type="button">🔄 تحديث</button>
+          <button class="btn-sm" id="exportBtn" type="button">⬇ تصدير CSV</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>المرجع</th><th>المريض</th><th>الجوال</th><th>العيادة</th><th>الطبيب</th>
+                <th>الموعد</th><th>الحالة</th><th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="bookingsTbody">
+              <tr><td colspan="8" class="empty-note">جاري تحميل الحجوزات...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="tab-manage" style="display:none;">
+        <div class="manage-grid">
+          <div class="manage-card">
+            <h3>إضافة عيادة جديدة</h3>
+            <div class="mini-form">
+              <input type="text" id="newClinicName" placeholder="اسم العيادة" maxlength="80">
+              <input type="text" id="newClinicDesc" placeholder="وصف مختصر" maxlength="300">
+              <label><input type="checkbox" id="newClinicWalkin"> بدون حجز مسبق (مثل الطوارئ)</label>
+              <button id="addClinicBtn" type="button">إضافة العيادة</button>
+            </div>
+          </div>
+          <div class="manage-card">
+            <h3>ملاحظة</h3>
+            <p style="font-size:13.5px; color:var(--ink-soft); margin:0;">
+              أي تعديل هنا (إضافة/حذف عيادة أو طبيب) ينعكس على نموذج الحجز في الموقع العام لكل الزوار.
+            </p>
+            <div class="mini-form hidden" id="seedBox">
+              <button id="seedBtn" type="button">استيراد العيادات الافتراضية</button>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:22px;">
+          <div id="clinicManageList"></div>
+        </div>
+      </div>
+
+      <div id="tab-media" style="display:none;">
+        <div class="manage-grid">
+          <div class="manage-card">
+            <h3>إضافة صورة أو فيديو للصفحة الرئيسية</h3>
+            <p style="font-size:13px; color:var(--ink-soft); margin:0 0 10px;">يظهر في قسم "من نشاطاتنا" لكل الزوار. الحد الأقصى 50 ميجابايت.</p>
+            <div class="mini-form" style="flex-direction:column; align-items:stretch;">
+              <input type="text" id="mediaTitle" placeholder="عنوان مختصر (اختياري)" maxlength="120">
+              <input type="file" id="mediaFile" accept="image/*,video/mp4,video/webm">
+              <button id="mediaUploadBtn" type="button">رفع إلى معرض الصفحة الرئيسية</button>
+              <span class="err" id="mediaErr"></span>
+            </div>
+          </div>
+          <div class="manage-card">
+            <h3>صور الأطباء</h3>
+            <p style="font-size:13px; color:var(--ink-soft); margin:0 0 10px;">اختر طبيباً وارفع صورته الشخصية لتظهر في صفحته.</p>
+            <div class="mini-form" style="flex-direction:column; align-items:stretch;">
+              <select id="docPhotoSelect"><option value="">-- اختر الطبيب --</option></select>
+              <input type="file" id="docPhotoFile" accept="image/*">
+              <textarea id="docPhotoBio" placeholder="نبذة مختصرة عن الطبيب (اختياري)" maxlength="600" style="min-height:60px;"></textarea>
+              <button id="docPhotoBtn" type="button">حفظ صورة ونبذة الطبيب</button>
+              <span class="err" id="docPhotoErr"></span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:22px;">
+          <h3 style="font-size:16px; color:var(--pine-deep); margin-bottom:12px;">عناصر المعرض الحالية</h3>
+          <div class="gallery-manage" id="galleryManageList"></div>
+        </div>
+      </div>
+
+      <div id="tab-team" style="display:none;">
+        <div class="manage-grid">
+          <div class="manage-card">
+            <h3>إضافة موظف إلى النظام</h3>
+            <p style="font-size:13px; color:var(--ink-soft); margin:0 0 10px;">
+              أنشئ أولاً حساب الدخول (بريد وكلمة مرور) من Supabase → Authentication → Users → Add user،
+              ثم انسخ "User UID" من هناك والصقه هنا مع تحديد الدور.
+            </p>
+            <div class="mini-form" style="flex-direction:column; align-items:stretch;">
+              <input type="text" id="teamUid" placeholder="User UID من Supabase" dir="ltr" style="text-align:right;">
+              <input type="text" id="teamName" placeholder="اسم الموظف">
+              <select id="teamRole">
+                <option value="reception">استقبال</option>
+                <option value="doctor">طبيب</option>
+                <option value="admin">مدير</option>
+              </select>
+              <select id="teamDoctorName" class="hidden"><option value="">-- اختر اسم الطبيب --</option></select>
+              <button id="teamAddBtn" type="button">حفظ الموظف</button>
+              <span class="err" id="teamErr"></span>
+            </div>
+          </div>
+          <div class="manage-card">
+            <h3>ملاحظة أمان</h3>
+            <p style="font-size:13.5px; color:var(--ink-soft); margin:0;">
+              اسم الطبيب المختار هنا يجب أن يطابق حرفياً اسمه في تبويب "العيادات والأطباء"،
+              ليرى حجوزاته فقط. حذف موظف من هنا لا يحذف حساب الدخول نفسه — لإيقاف الحساب كلياً
+              احذفه أيضاً من Supabase → Authentication → Users.
+            </p>
+          </div>
+        </div>
+        <div style="margin-top:22px;">
+          <h3 style="font-size:16px; color:var(--pine-deep); margin-bottom:12px;">الموظفون الحاليون</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>الاسم</th><th>الدور</th><th>اسم الطبيب المرتبط</th><th>إجراءات</th></tr></thead>
+              <tbody id="teamTbody"><tr><td colspan="4" class="empty-note">جاري التحميل...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-profile" style="display:none;">
+        <div class="manage-card" style="max-width:520px;">
+          <h3 id="profileDoctorName">ملفي الشخصي</h3>
+          <div class="mini-form" style="flex-direction:column; align-items:stretch; margin-top:10px;">
+            <label style="font-size:13px; font-weight:700;">الصورة الشخصية الحالية</label>
+            <img id="profilePhotoPreview" src="" alt="" style="display:none; width:120px; height:120px; border-radius:50%; object-fit:cover; border:2px solid var(--line);">
+            <input type="file" id="profilePhotoFile" accept="image/*">
+            <textarea id="profileBio" placeholder="نبذة مختصرة عنك (تظهر للزوار)" maxlength="600" style="min-height:80px;"></textarea>
+            <button id="profileSaveBtn" type="button">حفظ التعديلات</button>
+            <span class="err" id="profileErr"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODALS ============ -->
+<div class="modal-overlay" id="staffModal" role="dialog" aria-modal="true" aria-labelledby="staffTitle">
+  <div class="modal-box">
+    <h3 id="staffTitle">دخول الموظفين</h3>
+    <p id="staffHint">أدخل بيانات الدخول الخاصة بفريق الاستقبال / الإدارة.</p>
+    <div class="field" id="staffEmailField">
+      <label for="staffEmail">البريد الإلكتروني</label>
+      <input id="staffEmail" type="email" autocomplete="username" dir="ltr" style="text-align:right;">
+    </div>
+    <div class="field">
+      <label for="staffPass" id="staffPassLabel">كلمة المرور</label>
+      <input id="staffPass" type="password" autocomplete="current-password" placeholder="••••••••">
+    </div>
+    <div class="err" id="staffErr" role="alert"></div>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="cancelStaffLogin" type="button">إلغاء</button>
+      <button class="modal-confirm" id="confirmStaffLogin" type="button">دخول</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* =====================================================================
+     الإعدادات — عدّل هذا القسم فقط
+     ===================================================================== */
+  var CONFIG = {
+    // من Supabase: Project Settings → API   (اتركهما فارغين لوضع التجربة المحلي)
+    SUPABASE_URL: "",
+    SUPABASE_ANON_KEY: "",
+
+    // أرقام التواصل — اتركها فارغة لإخفائها من الموقع
+    PHONES: ["782086041", "772007811", "778966609"],   // الأول يظهر في الشريط العلوي وزر الطوارئ
+    WHATSAPP: "",             // بالصيغة الدولية بدون + أو أصفار، مثال: 967777123456
+    ADDRESS: "يريم - الدائري الغربي - تقاطع جولة غزة (سوق الأحد الجديد)",
+    MAP_URL: "",              // رابط الموقع على خرائط جوجل
+
+    // مواعيد الحجز
+    WORK_DAYS: [6,0,1,2,3,4], // أيام الدوام (0=الأحد ... 6=السبت) — هنا السبت إلى الخميس
+    TIME_SLOTS: [
+      {v:"09:00", l:"09:00 ص"}, {v:"11:00", l:"11:00 ص"}, {v:"13:00", l:"01:00 م"},
+      {v:"16:00", l:"04:00 م"}, {v:"18:00", l:"06:00 م"}
+    ],
+    MIN_LEAD_MINUTES: 30,     // أقل مدة بين الآن وأقرب موعد متاح اليوم
+
+    // وضع التجربة المحلي فقط (عند عدم ربط Supabase): كلمة مرور لوحة التحكم
+    LOCAL_PASSCODE: "demo1234"
+  };
+  /* ===================================================================== */
+  var MAIN_PHONE = (CONFIG.PHONES && CONFIG.PHONES[0]) ? CONFIG.PHONES[0] : "";
+
+  var dayNames = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+  var DEFAULT_CLINICS = [
+    { id:"emergency", name:"الطوارئ العامة", desc:"استقبال الحالات الطارئة على مدار الساعة.", doctors:["فريق الطوارئ المناوب"], walkin:true, sort:0 },
+    { id:"internal", name:"الباطنية العامة", desc:"تشخيص ومتابعة الأمراض الداخلية والمزمنة.", doctors:["د. أحمد المقطري","د. سالم العزعزي"], walkin:false, sort:1 },
+    { id:"surgery", name:"الجراحة العامة", desc:"عمليات جراحية عامة ومتابعة ما بعد الجراحة.", doctors:["د. خالد الشرعبي"], walkin:false, sort:2 },
+    { id:"obgyn", name:"نساء وولادة", desc:"متابعة الحمل والولادة وصحة المرأة.", doctors:["د. سمية الحداد","د. إيمان قائد"], walkin:false, sort:3 },
+    { id:"peds", name:"الأطفال", desc:"رعاية صحية شاملة للرضّع والأطفال.", doctors:["د. منى الصباحي"], walkin:false, sort:4 },
+    { id:"ortho", name:"العظام والمفاصل", desc:"إصابات وكسور وأمراض العظام والمفاصل.", doctors:["د. وليد الحيدري"], walkin:false, sort:5 },
+    { id:"ent", name:"أنف وأذن وحنجرة", desc:"تشخيص وعلاج أمراض الأنف والأذن والحنجرة.", doctors:["د. فيصل ثابت"], walkin:false, sort:6 },
+    { id:"dental", name:"الأسنان", desc:"علاج وتقويم وتجميل الأسنان.", doctors:["د. رشا العامري"], walkin:false, sort:7 },
+    { id:"derma", name:"الجلدية", desc:"تشخيص وعلاج الأمراض الجلدية.", doctors:["د. هدى المخلافي"], walkin:false, sort:8 },
+    { id:"eye", name:"العيون", desc:"فحص وعلاج أمراض العيون وضعف النظر.", doctors:["د. ياسر الجبري"], walkin:false, sort:9 }
+  ];
+
+  /* ---------- أدوات عامة ---------- */
+  function $(id){ return document.getElementById(id); }
+  function esc(s){
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function pad(n){ return n < 10 ? "0"+n : ""+n; }
+  function ymd(d){ return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); }
+  function parseYmd(s){ var p = String(s).split("-"); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function toLatinDigits(s){
+    return String(s).replace(/[٠-٩]/g, function(d){ return "٠١٢٣٤٥٦٧٨٩".indexOf(d); })
+                    .replace(/[۰-۹]/g, function(d){ return "۰۱۲۳۴۵۶۷۸۹".indexOf(d); });
+  }
+  function normalizePhone(raw){
+    var p = toLatinDigits(raw).replace(/\D/g, "");
+    if(p.indexOf("00967") === 0) p = p.slice(5);
+    else if(p.indexOf("967") === 0 && p.length === 12) p = p.slice(3);
+    else if(p.charAt(0) === "0" && p.length === 10) p = p.slice(1);
+    return p;
+  }
+  function timeLabel(v){
+    for(var i=0;i<CONFIG.TIME_SLOTS.length;i++) if(CONFIG.TIME_SLOTS[i].v === v) return CONFIG.TIME_SLOTS[i].l;
+    return v;
+  }
+  function slotLabelOf(dateStr, timeV){
+    var d = parseYmd(dateStr);
+    return dayNames[d.getDay()] + " " + d.getDate() + "/" + (d.getMonth()+1) + "/" + d.getFullYear() + " — " + timeLabel(timeV);
+  }
+  function newRef(){
+    var alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789", out = "";
+    var arr = new Uint8Array(6);
+    (window.crypto || window.msCrypto).getRandomValues(arr);
+    for(var i=0;i<6;i++) out += alphabet.charAt(arr[i] % alphabet.length);
+    return "HT-" + out;
+  }
+  var toastTimer;
+  function showToast(msg){
+    var t = $("toast");
+    t.textContent = msg; t.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ t.classList.remove("show"); }, 3800);
+  }
+  function waLink(number, text){
+    return "https://wa.me/" + String(number).replace(/\D/g,"") + "?text=" + encodeURIComponent(text);
+  }
+  function csvCell(v){
+    var s = String(v == null ? "" : v);
+    if(/^[=+\-@\t\r]/.test(s)) s = "'" + s;
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+
+  /* ---------- الاتصال بقاعدة البيانات ---------- */
+  var keysSet = !!(CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY);
+  var libFailed = keysSet && !(window.supabase && window.supabase.createClient);
+  var live = keysSet && !libFailed;
+  var sb = live ? window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY) : null;
+  var canSubmit = (live || (!keysSet && !!CONFIG.WHATSAPP));
+
+  /* ---------- تحويل الصفوف ---------- */
+  function bookingToRow(b){
+    return {
+      ref:b.ref, request_type:b.type, phone:b.phone, name:b.name, gender:b.gender,
+      age_value:b.ageValue, age_unit:b.ageUnit, address:b.address,
+      clinic_id:b.clinicId || null, clinic_name:b.clinicName || null, doctor:b.doctor || null,
+      slot_date:b.slotDate || null, slot_time:b.slotTime || null, slot_label:b.slotLabel || null,
+      notes:b.notes, pay_method:b.payMethod || null, pay_ref:b.payRef || null, status:b.status
+    };
+  }
+  function bookingFromRow(r){
+    var created = r.created_at;
+    if(typeof created === "string") created = new Date(created).getTime();
+    return {
+      ref:r.ref, type:r.request_type || "appointment", phone:r.phone, name:r.name, gender:r.gender,
+      ageValue:r.age_value, ageUnit:r.age_unit, address:r.address,
+      clinicId:r.clinic_id, clinicName:r.clinic_name, doctor:r.doctor,
+      slotDate:r.slot_date, slotTime:r.slot_time, slotLabel:r.slot_label,
+      notes:r.notes, payMethod:r.pay_method, payRef:r.pay_ref, status:r.status, createdAt:created
+    };
+  }
+  function clinicFromRow(r){
+    return { id:r.id, name:r.name, desc:r.description || "", doctors:r.doctors || [], walkin:!!r.walkin, sort:r.sort_order || 0, image_url:r.image_url || "" };
+  }
+  function clinicToRow(c){
+    return { id:c.id, name:c.name, description:c.desc || "", doctors:c.doctors || [], walkin:!!c.walkin, sort_order:c.sort || 0, image_url:c.image_url || null };
+  }
+
+  /* ---------- طبقة التخزين: Supabase (حقيقي) ---------- */
+  var liveStore = {
+    async clinics(){
+      var r = await sb.from("clinics").select("*").order("sort_order").order("name");
+      if(r.error) throw r.error;
+      return (r.data || []).map(clinicFromRow);
+    },
+    async saveClinic(c){
+      var r = await sb.from("clinics").upsert(clinicToRow(c), { onConflict:"id" });
+      if(r.error) throw r.error;
+    },
+    async deleteClinic(id){
+      var r = await sb.from("clinics").delete().eq("id", id).select("id");
+      if(r.error) throw r.error;
+      if(!r.data || !r.data.length) throw new Error("no-permission");
+    },
+    async createBooking(b){
+      var r = await sb.from("bookings").insert(bookingToRow(b));
+      if(r.error) throw r.error;
+    },
+    async takenSlots(doctor, from, to){
+      var r = await sb.rpc("taken_slots", { p_doctor:doctor, p_from:from, p_to:to });
+      if(r.error) throw r.error;
+      return (r.data || []).map(function(x){ return { date:x.slot_date, time:String(x.slot_time).slice(0,5) }; });
+    },
+    async list(){
+      var r = await sb.from("bookings").select("*").order("created_at", { ascending:false }).limit(1000);
+      if(r.error) throw r.error;
+      return (r.data || []).map(bookingFromRow);
+    },
+    async setStatus(ref, status){
+      var r = await sb.from("bookings").update({ status:status }).eq("ref", ref).select("ref");
+      if(r.error) throw r.error;
+      if(!r.data || !r.data.length) throw new Error("no-permission");
+    },
+    async lookup(ref, phone){
+      var r = await sb.rpc("get_booking", { p_ref:ref, p_phone:phone });
+      if(r.error) throw r.error;
+      var x = (r.data || [])[0];
+      if(!x) return null;
+      return { ref:x.ref, type:x.request_type, name:x.name, clinicName:x.clinic_name, doctor:x.doctor, slotLabel:x.slot_label, status:x.status };
+    },
+    async cancelByPatient(ref, phone){
+      var r = await sb.rpc("cancel_booking", { p_ref:ref, p_phone:phone });
+      if(r.error) throw r.error;
+      return !!r.data;
+    }
+  };
+
+  /* ---------- طبقة التخزين: محلي (وضع تجربة على هذا الجهاز فقط) ---------- */
+  function lsGet(k, def){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : def; }catch(e){ return def; } }
+  function lsSet(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); return true; }catch(e){ return false; } }
+  var localStore = {
+    async clinics(){
+      var c = lsGet("ht_clinics", null);
+      if(!c){ c = DEFAULT_CLINICS.slice(); lsSet("ht_clinics", c); }
+      return c;
+    },
+    async saveClinic(c){
+      var list = await this.clinics(), i = -1;
+      list.forEach(function(x, idx){ if(x.id === c.id) i = idx; });
+      if(i > -1) list[i] = c; else list.push(c);
+      lsSet("ht_clinics", list);
+    },
+    async deleteClinic(id){
+      var list = (await this.clinics()).filter(function(c){ return c.id !== id; });
+      lsSet("ht_clinics", list);
+    },
+    async createBooking(b){
+      var list = lsGet("ht_bookings", []);
+      if(b.slotDate){
+        var clash = list.some(function(x){ return x.doctor === b.doctor && x.slotDate === b.slotDate && x.slotTime === b.slotTime && x.status !== "cancelled"; });
+        if(clash){ var e = new Error("bookings_slot_unique"); e.code = "23505"; throw e; }
+      }
+      list.unshift(b);
+      if(!lsSet("ht_bookings", list)) throw new Error("storage");
+    },
+    async takenSlots(doctor, from, to){
+      return lsGet("ht_bookings", []).filter(function(x){
+        return x.doctor === doctor && x.slotDate && x.slotDate >= from && x.slotDate <= to && x.status !== "cancelled";
+      }).map(function(x){ return { date:x.slotDate, time:x.slotTime }; });
+    },
+    async list(){ return lsGet("ht_bookings", []); },
+    async setStatus(ref, status){
+      var list = lsGet("ht_bookings", []);
+      list.forEach(function(x){ if(x.ref === ref) x.status = status; });
+      lsSet("ht_bookings", list);
+    },
+    async lookup(ref, phone){
+      var x = lsGet("ht_bookings", []).filter(function(b){ return b.ref === ref && b.phone === phone; })[0];
+      return x ? { ref:x.ref, type:x.type, name:x.name, clinicName:x.clinicName, doctor:x.doctor, slotLabel:x.slotLabel, status:x.status } : null;
+    },
+    async cancelByPatient(ref, phone){
+      var list = lsGet("ht_bookings", []), done = false;
+      list.forEach(function(x){
+        if(x.ref === ref && x.phone === phone && (x.status === "pending" || x.status === "confirmed")){ x.status = "cancelled"; done = true; }
+      });
+      lsSet("ht_bookings", list);
+      return done;
+    }
+  };
+  var store = live ? liveStore : localStore;
+
+  /* ---------- رفع الصور والفيديو (Supabase Storage) ---------- */
+  var MAX_UPLOAD_MB = 50;
+  async function uploadMedia(file, folder){
+    if(!live) throw new Error("media-needs-live");
+    if(file.size > MAX_UPLOAD_MB * 1024 * 1024) throw new Error("media-too-large");
+    var ext = (file.name.split(".").pop() || "bin").toLowerCase().replace(/[^a-z0-9]/g, "") || "bin";
+    var path = folder + "/" + Date.now() + "-" + Math.random().toString(36).slice(2, 8) + "." + ext;
+    var up = await sb.storage.from("media").upload(path, file, { cacheControl:"31536000", upsert:false });
+    if(up.error) throw up.error;
+    var pub = sb.storage.from("media").getPublicUrl(path);
+    return pub.data.publicUrl;
+  }
+
+  /* ---------- الحالة ---------- */
+  var clinics = [];
+  var clinicsAreDefaults = false;
+  var bookingsCache = [];
+  var doctorProfiles = {};   // { "د. فلان": {photo_url, bio} }
+  var galleryItems = [];
+  var currentStaff = null;   // { role, doctor_name, name } بعد تسجيل الدخول
+
+  async function loadDoctorProfiles(){
+    doctorProfiles = {};
+    if(!live) return;
+    try{
+      var r = await sb.from("doctor_profiles").select("*");
+      if(r.error) throw r.error;
+      (r.data || []).forEach(function(row){ doctorProfiles[row.doctor_name] = row; });
+    }catch(e){ /* تجاهل بصمت في الموقع العام */ }
+  }
+  async function loadGallery(){
+    galleryItems = [];
+    if(!live) return;
+    try{
+      var r = await sb.from("media_gallery").select("*").order("sort_order").order("created_at", { ascending:false });
+      if(r.error) throw r.error;
+      galleryItems = r.data || [];
+    }catch(e){ /* تجاهل بصمت */ }
+  }
+  function renderGallery(){
+    var sec = $("gallery"), grid = $("galleryGrid");
+    if(!galleryItems.length){ sec.classList.add("hidden"); return; }
+    sec.classList.remove("hidden");
+    grid.innerHTML = galleryItems.map(function(g){
+      var media = g.kind === "video"
+        ? '<video src="' + esc(g.url) + '" controls preload="metadata"></video>'
+        : '<img src="' + esc(g.url) + '" alt="' + esc(g.title) + '" loading="lazy">';
+      return '<div class="gallery-card">' + media + (g.title ? '<span>' + esc(g.title) + '</span>' : '') + '</div>';
+    }).join("");
+  }
+
+  async function loadClinics(){
+    try{
+      var list = await store.clinics();
+      if(list.length){ clinics = list; clinicsAreDefaults = false; return; }
+    }catch(e){ /* نعرض الافتراضي للقراءة فقط */ }
+    clinics = DEFAULT_CLINICS.slice();
+    clinicsAreDefaults = true;
+  }
+  function bookable(){ return clinics.filter(function(c){ return !c.walkin; }); }
+
+  /* ---------- تطبيق الإعدادات على الواجهة ---------- */
+  function applyConfig(){
+    if(MAIN_PHONE){
+      var top = $("topPhone"); top.href = "tel:" + MAIN_PHONE; top.textContent = "📞 اتصل الآن: " + MAIN_PHONE; top.classList.remove("hidden");
+      $("footPhones").innerHTML = CONFIG.PHONES.map(function(n){
+        return '<a href="tel:' + esc(n) + '" dir="ltr">' + esc(n) + '</a>';
+      }).join(" - ");
+      $("footPhoneLi").classList.remove("hidden");
+    }
+    if(CONFIG.WHATSAPP){
+      var w = "https://wa.me/" + CONFIG.WHATSAPP.replace(/\D/g,"");
+      $("consultWa").href = w; $("consultWa").classList.remove("hidden");
+      $("footWa").href = w; $("footWaLi").classList.remove("hidden");
+    }
+    if(CONFIG.ADDRESS) $("footAddress").textContent = "الجمهورية اليمنية — " + CONFIG.ADDRESS;
+    if(CONFIG.MAP_URL){ $("footMap").href = CONFIG.MAP_URL; $("footMapLi").classList.remove("hidden"); }
+  }
+
+  /* ---------- عرض العيادات ---------- */
+  function renderClinicsGrid(){
+    var grid = $("clinicsGrid");
+    grid.innerHTML = "";
+    if(!clinics.length){ grid.innerHTML = '<div class="load-note">لا توجد عيادات معروضة حالياً.</div>'; return; }
+    clinics.forEach(function(c){
+      var card = document.createElement("div");
+      card.className = "clinic-card";
+      var tags = c.doctors.map(function(d){
+        var prof = doctorProfiles[d];
+        var avatar = (prof && prof.photo_url) ? '<img class="doc-avatar" src="' + esc(prof.photo_url) + '" alt="">' : "";
+        return "<span>" + avatar + esc(d) + "</span>";
+      }).join("");
+      var action;
+      if(c.walkin){
+        action = MAIN_PHONE
+          ? '<a class="book-btn" href="tel:' + esc(MAIN_PHONE) + '">اتصل بنا الآن</a>'
+          : '<span class="soft-note">الاستقبال مباشرة بدون حجز مسبق</span>';
+      }else if(c.doctors.length){
+        action = '<button type="button" class="book-btn" data-clinic="' + esc(c.id) + '">احجز في هذه العيادة ←</button>';
+      }else{
+        action = '<span class="soft-note">الحجز متاح قريباً</span>';
+      }
+      var media = c.image_url
+        ? '<img class="clinic-photo" src="' + esc(c.image_url) + '" alt="">'
+        : '<div class="clinic-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-width="2.4" stroke-linecap="round"/></svg></div>';
+      card.innerHTML =
+        media +
+        '<h3>' + esc(c.name) + '</h3><p>' + esc(c.desc) + '</p>' +
+        '<div class="doctor-tags">' + tags + '</div>' + action;
+      grid.appendChild(card);
+    });
+    $("statClinics").textContent = clinics.length;
+  }
+  function populateClinicSelect(){
+    var sel = $("clinicSelect"), cur = sel.value;
+    sel.innerHTML = '<option value="">-- اختر العيادة --</option>';
+    bookable().forEach(function(c){
+      if(!c.doctors.length) return;
+      var o = document.createElement("option");
+      o.value = c.id; o.textContent = c.name;
+      sel.appendChild(o);
+    });
+    sel.value = cur;
+  }
+
+  /* ---------- نموذج الحجز ---------- */
+  var clinicSelect, doctorSelect, slotSelect, weekRange, computedDate, slotToken = 0;
+  var COMPUTED_DEFAULT = "سيظهر التاريخ بعد اختيار اليوم والوقت";
+
+  function getReqType(){ return document.querySelector('input[name="reqType"]:checked').value; }
+  function setError(fieldId, message){
+    var f = $(fieldId);
+    f.classList.toggle("error", !!message);
+    f.querySelector(".err").textContent = message || "";
+  }
+  function resetSlots(){
+    slotToken++;
+    slotSelect.disabled = true;
+    slotSelect.innerHTML = '<option value="">-- اختر الطبيب أولاً --</option>';
+    computedDate.textContent = COMPUTED_DEFAULT;
+  }
+
+  async function buildSlots(){
+    var token = ++slotToken;
+    var doctor = doctorSelect.value;
+    slotSelect.disabled = true;
+    slotSelect.innerHTML = '<option value="">جاري تحميل المواعيد...</option>';
+    computedDate.textContent = COMPUTED_DEFAULT;
+
+    var base = new Date(); base.setHours(0,0,0,0);
+    base.setDate(base.getDate() + parseInt(weekRange.value, 10) * 7);
+    var days = [];
+    for(var i=0;i<7;i++){
+      var d = new Date(base); d.setDate(base.getDate() + i);
+      if(CONFIG.WORK_DAYS.indexOf(d.getDay()) > -1) days.push(d);
+    }
+    var taken = {};
+    try{
+      var rows = await store.takenSlots(doctor, ymd(days[0]), ymd(days[days.length-1]));
+      rows.forEach(function(r){ taken[r.date + "|" + r.time] = true; });
+    }catch(e){
+      showToast("تعذر التحقق من المواعيد المحجوزة، حاول مجدداً");
+    }
+    if(token !== slotToken) return; // تغيّر الاختيار أثناء التحميل
+
+    var minTime = Date.now() + CONFIG.MIN_LEAD_MINUTES * 60000;
+    var frag = document.createDocumentFragment(), available = 0;
+    var ph = document.createElement("option"); ph.value = ""; ph.textContent = "-- اختر اليوم والوقت --";
+    frag.appendChild(ph);
+    days.forEach(function(d){
+      var group = document.createElement("optgroup");
+      group.label = dayNames[d.getDay()] + " " + d.getDate() + "/" + (d.getMonth()+1);
+      var count = 0;
+      CONFIG.TIME_SLOTS.forEach(function(t){
+        var hh = t.v.split(":");
+        var when = new Date(d.getFullYear(), d.getMonth(), d.getDate(), +hh[0], +hh[1]).getTime();
+        if(when <= minTime) return;
+        var o = document.createElement("option");
+        var key = ymd(d) + "|" + t.v;
+        o.value = key;
+        if(taken[key]){ o.disabled = true; o.textContent = t.l + " (محجوز)"; }
+        else { o.textContent = t.l; available++; }
+        group.appendChild(o); count++;
+      });
+      if(count) frag.appendChild(group);
+    });
+    slotSelect.innerHTML = "";
+    slotSelect.appendChild(frag);
+    if(!available){
+      slotSelect.firstChild.textContent = "لا توجد مواعيد متاحة — جرّب الأسبوع الآخر";
+    }
+    slotSelect.disabled = false;
+  }
+
+  function setReqMode(){
+    var consult = getReqType() === "consult";
+    $("fs-appt").classList.toggle("hidden", consult);
+    $("notesLabel").textContent = consult ? "صف حالتك ليوجّهك الفريق الطبي (مطلوب)" : "شكوى أو ملاحظات أولية للمريض";
+    $("submitBtn").textContent = consult ? "إرسال طلب الاستشارة" : "إرسال طلب الحجز";
+  }
+
+  function initBookingForm(){
+    clinicSelect = $("clinicSelect"); doctorSelect = $("doctorSelect");
+    slotSelect = $("slotSelect"); weekRange = $("weekRange"); computedDate = $("computedDate");
+
+    if(!canSubmit){
+      var msg = libFailed
+        ? "تعذر تحميل مكتبة قاعدة البيانات. تحقق من اتصال الإنترنت ثم أعد تحميل الصفحة."
+        : "نظام الحجز الإلكتروني غير مفعّل بعد. يرجى التواصل معنا عبر الهاتف مباشرة.";
+      var fa = $("formAlert"); fa.textContent = msg; fa.classList.add("show");
+      $("submitBtn").disabled = true;
+    }
+
+    $("clinicsGrid").addEventListener("click", function(e){
+      var btn = e.target.closest("button[data-clinic]");
+      if(!btn) return;
+      document.querySelector('input[name="reqType"][value="appointment"]').checked = true;
+      setReqMode();
+      clinicSelect.value = btn.getAttribute("data-clinic");
+      clinicSelect.dispatchEvent(new Event("change"));
+      $("booking").scrollIntoView({ behavior:"smooth", block:"start" });
+    });
+
+    $("consultBtn").addEventListener("click", function(){
+      document.querySelector('input[name="reqType"][value="consult"]').checked = true;
+      setReqMode();
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('input[name="reqType"]'), function(r){
+      r.addEventListener("change", setReqMode);
+    });
+
+    clinicSelect.addEventListener("change", function(){
+      var clinic = clinics.filter(function(c){ return c.id === clinicSelect.value; })[0];
+      doctorSelect.innerHTML = "";
+      if(!clinic){
+        doctorSelect.disabled = true;
+        doctorSelect.innerHTML = '<option value="">-- اختر العيادة أولاً --</option>';
+        resetSlots(); return;
+      }
+      doctorSelect.disabled = false;
+      var ph = document.createElement("option"); ph.value = ""; ph.textContent = "-- اختر الطبيب --";
+      doctorSelect.appendChild(ph);
+      clinic.doctors.forEach(function(d){
+        var o = document.createElement("option"); o.value = d; o.textContent = d;
+        doctorSelect.appendChild(o);
+      });
+      if(clinic.doctors.length === 1){ doctorSelect.value = clinic.doctors[0]; buildSlots(); }
+      else resetSlots();
+    });
+
+    doctorSelect.addEventListener("change", function(){ if(doctorSelect.value) buildSlots(); else resetSlots(); });
+    weekRange.addEventListener("change", function(){ if(doctorSelect.value) buildSlots(); });
+    slotSelect.addEventListener("change", function(){
+      if(!slotSelect.value){ computedDate.textContent = COMPUTED_DEFAULT; return; }
+      var p = slotSelect.value.split("|");
+      computedDate.textContent = slotLabelOf(p[0], p[1]);
+    });
+
+    var payToggle = $("payToggle"), payFields = $("payFields");
+    payToggle.addEventListener("change", function(){ payFields.classList.toggle("show", payToggle.checked); });
+
+    var form = $("bookingForm"), confirmBox = $("confirmBox"), formAlert = $("formAlert"), submitBtn = $("submitBtn");
+
+    $("copyRef").addEventListener("click", function(){
+      var ref = $("refCode").getAttribute("data-ref") || "";
+      if(navigator.clipboard && ref){ navigator.clipboard.writeText(ref).then(function(){ showToast("تم نسخ رقم المرجع"); }, function(){ showToast(ref); }); }
+      else showToast(ref);
+    });
+
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+      formAlert.classList.remove("show");
+      if(!canSubmit){ formAlert.classList.add("show"); return; }
+
+      // فخ للروبوتات: الحقل المخفي يجب أن يبقى فارغاً
+      if($("website").value){ confirmBox.classList.add("show"); return; }
+
+      // منع الإرسال المتكرر السريع
+      var last = lsGet("ht_last_submit", 0);
+      if(Date.now() - last < 20000){
+        formAlert.textContent = "تم إرسال طلب قبل لحظات. انتظر قليلاً قبل إرسال طلب جديد.";
+        formAlert.classList.add("show"); return;
+      }
+
+      var type = getReqType(), consult = type === "consult", valid = true;
+
+      var phone = normalizePhone($("phone").value);
+      if(!/^7[0-9]{8}$/.test(phone)){ setError("f-phone", "أدخل رقم جوال يمني صحيح (يبدأ بـ 7 ويتكون من 9 أرقام)"); valid = false; } else setError("f-phone", "");
+
+      var pname = $("pname").value.trim().replace(/\s+/g, " ");
+      if(pname.split(" ").length < 2 || pname.length < 5){ setError("f-name", "يرجى إدخال الاسم الرباعي كاملاً"); valid = false; } else setError("f-name", "");
+
+      var ageRaw = toLatinDigits($("age").value).trim(), ageUnit = $("ageUnit").value;
+      var ageN = Number(ageRaw), ageMax = ageUnit === "سنة" ? 120 : 60;
+      if(ageRaw === "" || !isFinite(ageN) || ageN < 0 || ageN > ageMax || Math.floor(ageN) !== ageN){ setError("f-age", "أدخل عمراً صحيحاً"); valid = false; } else setError("f-age", "");
+
+      var notes = $("notes").value.trim();
+      if(consult && notes.length < 5){ setError("f-notes", "اكتب وصفاً موجزاً لحالتك"); valid = false; } else setError("f-notes", "");
+
+      var clinicObj = null, slotDate = "", slotTime = "";
+      if(!consult){
+        clinicObj = clinics.filter(function(c){ return c.id === clinicSelect.value; })[0] || null;
+        if(!clinicObj){ setError("f-clinic", "يرجى اختيار العيادة"); valid = false; } else setError("f-clinic", "");
+        if(!doctorSelect.value){ setError("f-doctor", "يرجى اختيار الطبيب المختص"); valid = false; } else setError("f-doctor", "");
+        if(!slotSelect.value){ setError("f-slot", "يرجى اختيار اليوم والوقت"); valid = false; }
+        else { setError("f-slot", ""); var sp = slotSelect.value.split("|"); slotDate = sp[0]; slotTime = sp[1]; }
+      }
+
+      if(!valid){
+        var firstError = form.querySelector(".error");
+        if(firstError) firstError.scrollIntoView({ behavior:"smooth", block:"center" });
+        return;
+      }
+
+      var booking = {
+        ref:newRef(), type:type, phone:phone, name:pname, gender:$("gender").value,
+        ageValue:ageN, ageUnit:ageUnit, address:$("address").value.trim(),
+        clinicId: clinicObj ? clinicObj.id : "", clinicName: clinicObj ? clinicObj.name : "",
+        doctor: consult ? "" : doctorSelect.value,
+        slotDate:slotDate, slotTime:slotTime,
+        slotLabel: consult ? "استشارة أولية" : slotLabelOf(slotDate, slotTime),
+        notes:notes, payMethod: payToggle.checked ? $("payMethod").value : "",
+        payRef: payToggle.checked ? $("payRef").value.trim() : "",
+        status:"pending", createdAt:Date.now()
+      };
+
+      submitBtn.disabled = true;
+      var oldLabel = submitBtn.textContent;
+      submitBtn.textContent = "جارٍ الإرسال...";
+      try{
+        var attempts = 0;
+        while(true){
+          try{ await store.createBooking(booking); break; }
+          catch(err){
+            var m = String((err && err.message) || "");
+            if(err && err.code === "23505" && m.indexOf("slot") === -1 && attempts < 2){ booking.ref = newRef(); attempts++; continue; }
+            throw err;
+          }
+        }
+        lsSet("ht_last_submit", Date.now());
+
+        var ageTxt = ageN + " " + ageUnit;
+        $("confirmTitle").textContent = live ? "تم استلام طلبك بنجاح ✅" : "تم تجهيز طلبك ✅";
+        $("confirmText").textContent = consult
+          ? "تم تسجيل طلب استشارة " + pname + ". سيتواصل معك الفريق الطبي على الرقم " + phone + "."
+          : "طلب حجز " + pname + " في عيادة " + clinicObj.name + " مع " + booking.doctor + " بتاريخ " + booking.slotLabel + ". سيتم التواصل معك على الرقم " + phone + " للتأكيد.";
+        if(!live) $("confirmText").textContent += " لإتمام الحجز أرسل التفاصيل للمستشفى عبر واتساب بالزر أدناه.";
+        $("refCode").textContent = "رقم مرجع الحجز: " + booking.ref;
+        $("refCode").setAttribute("data-ref", booking.ref);
+
+        var wa = $("confirmWa");
+        if(CONFIG.WHATSAPP){
+          var text = (consult ? "طلب استشارة أولية" : "طلب حجز موعد") + "\n" +
+            "رقم المرجع: " + booking.ref + "\nالمريض: " + pname + " (" + booking.gender + "، " + ageTxt + ")\nالجوال: " + phone +
+            (consult ? "" : "\nالعيادة: " + clinicObj.name + "\nالطبيب: " + booking.doctor + "\nالموعد: " + booking.slotLabel) +
+            (notes ? "\nالشكوى: " + notes : "");
+          wa.href = waLink(CONFIG.WHATSAPP, text);
+          wa.classList.remove("hidden");
+        }else wa.classList.add("hidden");
+
+        confirmBox.classList.add("show");
+        confirmBox.scrollIntoView({ behavior:"smooth", block:"center" });
+        form.reset();
+        setReqMode();
+        resetSlots();
+        doctorSelect.innerHTML = '<option value="">-- اختر العيادة أولاً --</option>';
+        doctorSelect.disabled = true;
+        payFields.classList.remove("show");
+      }catch(err){
+        var em = String((err && err.message) || "");
+        if(err && err.code === "23505" && em.indexOf("slot") > -1){
+          formAlert.textContent = "عذراً، هذا الموعد حُجز للتو من مريض آخر. اختر موعداً آخر.";
+          if(doctorSelect.value) buildSlots();
+        }else{
+          formAlert.textContent = "تعذر إرسال الطلب حالياً بسبب مشكلة في الاتصال. حاول مرة أخرى بعد قليل" +
+            (MAIN_PHONE ? "، أو اتصل بنا مباشرة." : ".");
+        }
+        formAlert.classList.add("show");
+        formAlert.scrollIntoView({ behavior:"smooth", block:"center" });
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = oldLabel;
+      setReqMode();
+    });
+  }
+
+  /* ---------- تتبع الحجز (للمريض) ---------- */
+  var statusLabels = { pending:"بانتظار التأكيد", confirmed:"مؤكد", done:"تمت المعاينة", cancelled:"ملغي" };
+  var statusClasses = { pending:"badge-pending", confirmed:"badge-confirmed", done:"badge-done", cancelled:"badge-cancelled" };
+
+  function initTrack(){
+    var box = $("trackResult");
+    async function runLookup(){
+      var ref = $("trackRef").value.trim().toUpperCase().replace(/\s/g, "");
+      var phone = normalizePhone($("trackPhone").value);
+      if(!ref || !/^7[0-9]{8}$/.test(phone)){ showToast("أدخل رقم المرجع ورقم جوال صحيح"); return; }
+      $("trackBtn").disabled = true;
+      try{
+        var b = await store.lookup(ref, phone);
+        if(!b){
+          box.innerHTML = "لم نعثر على حجز بهذه البيانات. تأكد من رقم المرجع والجوال."; box.classList.add("show");
+        }else{
+          var canCancel = b.status === "pending" || b.status === "confirmed";
+          box.innerHTML =
+            '<dl><dt>المريض</dt><dd>' + esc(b.name) + '</dd>' +
+            '<dt>النوع</dt><dd>' + (b.type === "consult" ? "استشارة أولية" : "حجز موعد") + '</dd>' +
+            (b.type === "consult" ? "" : '<dt>العيادة</dt><dd>' + esc(b.clinicName) + '</dd><dt>الطبيب</dt><dd>' + esc(b.doctor) + '</dd><dt>الموعد</dt><dd>' + esc(b.slotLabel) + '</dd>') +
+            '<dt>الحالة</dt><dd><span class="badge ' + statusClasses[b.status] + '">' + esc(statusLabels[b.status] || b.status) + '</span></dd></dl>' +
+            (canCancel ? '<button type="button" class="danger-btn" id="trackCancel">إلغاء الحجز</button>' : "");
+          box.classList.add("show");
+          var cb = $("trackCancel");
+          if(cb) cb.addEventListener("click", async function(){
+            if(!confirm("هل تريد إلغاء هذا الحجز؟")) return;
+            cb.disabled = true;
+            try{
+              var ok = await store.cancelByPatient(ref, phone);
+              showToast(ok ? "تم إلغاء الحجز" : "تعذر إلغاء الحجز");
+              runLookup();
+            }catch(e){ showToast("تعذر الإلغاء، حاول مجدداً"); cb.disabled = false; }
+          });
+        }
+      }catch(e){
+        box.innerHTML = "تعذر الاتصال حالياً. حاول مرة أخرى بعد قليل."; box.classList.add("show");
+      }
+      $("trackBtn").disabled = false;
+    }
+    $("trackBtn").addEventListener("click", runLookup);
+    $("trackPhone").addEventListener("keydown", function(e){ if(e.key === "Enter") runLookup(); });
+    $("trackRef").addEventListener("keydown", function(e){ if(e.key === "Enter") runLookup(); });
+  }
+
+  /* ---------- دخول الموظفين ---------- */
+  var staffModal = $("staffModal"), autoRefresh = null;
+
+  function openStaffModal(){
+    $("staffEmailField").classList.toggle("hidden", !live);
+    $("staffPassLabel").textContent = live ? "كلمة المرور" : "رمز الدخول (وضع التجربة)";
+    $("staffEmail").value = ""; $("staffPass").value = ""; $("staffErr").textContent = "";
+    staffModal.classList.add("show");
+    (live ? $("staffEmail") : $("staffPass")).focus();
+  }
+  function closeStaffModal(){ staffModal.classList.remove("show"); $("openStaffLogin").focus(); }
+
+  $("openStaffLogin").addEventListener("click", async function(){
+    if(live){
+      try{
+        var s = await sb.auth.getSession();
+        if(s.data && s.data.session){ await showAdmin(); return; }
+      }catch(e){}
+    }
+    openStaffModal();
+  });
+  $("cancelStaffLogin").addEventListener("click", closeStaffModal);
+  staffModal.addEventListener("keydown", function(e){ if(e.key === "Escape") closeStaffModal(); });
+  staffModal.addEventListener("click", function(e){ if(e.target === staffModal) closeStaffModal(); });
+  $("confirmStaffLogin").addEventListener("click", doLogin);
+  $("staffPass").addEventListener("keydown", function(e){ if(e.key === "Enter") doLogin(); });
+  $("staffEmail").addEventListener("keydown", function(e){ if(e.key === "Enter") $("staffPass").focus(); });
+
+  async function doLogin(){
+    var pass = $("staffPass").value;
+    var btn = $("confirmStaffLogin");
+    $("staffErr").textContent = "";
+    if(live){
+      var email = $("staffEmail").value.trim();
+      if(!email || !pass){ $("staffErr").textContent = "أدخل البريد وكلمة المرور"; return; }
+      btn.disabled = true;
+      try{
+        var r = await sb.auth.signInWithPassword({ email:email, password:pass });
+        if(r.error){ $("staffErr").textContent = "بيانات الدخول غير صحيحة"; btn.disabled = false; return; }
+      }catch(e){ $("staffErr").textContent = "تعذر الاتصال، حاول مجدداً"; btn.disabled = false; return; }
+      btn.disabled = false;
+    }else{
+      if(!CONFIG.LOCAL_PASSCODE || pass !== CONFIG.LOCAL_PASSCODE){ $("staffErr").textContent = "رمز الدخول غير صحيح"; return; }
+    }
+    staffModal.classList.remove("show");
+    await showAdmin();
+  }
+
+  async function fetchCurrentStaff(){
+    if(!live) return { role:"admin", doctor_name:null, name:"" }; // وضع التجربة المحلي: صلاحية كاملة على الجهاز فقط
+    var uid = (await sb.auth.getUser()).data.user.id;
+    var r = await sb.from("staff").select("*").eq("id", uid).maybeSingle();
+    if(r.error) throw r.error;
+    return r.data; // null إذا لم يُسند له دور بعد
+  }
+
+  function applyRoleUi(){
+    var role = currentStaff ? currentStaff.role : null;
+    $("tabBtnManage").classList.toggle("hidden", !(role === "admin" || role === "reception"));
+    $("tabBtnMedia").classList.toggle("hidden", !(live && (role === "admin" || role === "reception")));
+    $("tabBtnTeam").classList.toggle("hidden", !(live && role === "admin"));
+    $("tabBtnProfile").classList.toggle("hidden", !(live && role === "doctor"));
+    if(role === "doctor"){
+      $("profileDoctorName").textContent = "ملفي الشخصي — " + (currentStaff.doctor_name || "");
+    }
+  }
+  function activateTab(tabName){
+    Array.prototype.forEach.call(document.querySelectorAll(".admin-tab"), function(t){ t.classList.toggle("active", t.dataset.tab === tabName); });
+    ["dash","manage","media","team","profile"].forEach(function(t){
+      $("tab-" + t).style.display = t === tabName ? "block" : "none";
+    });
+    if(tabName === "manage") renderClinicManageList();
+    if(tabName === "media") { populateDoctorPhotoSelect(); renderGalleryManageList(); }
+    if(tabName === "team") refreshTeamList();
+    if(tabName === "profile") loadOwnProfile();
+  }
+
+  async function showAdmin(){
+    var note = $("modeNote");
+    try{
+      currentStaff = await fetchCurrentStaff();
+    }catch(e){
+      currentStaff = null;
+    }
+    if(live && !currentStaff){
+      try{ await sb.auth.signOut(); }catch(e){}
+      $("staffErr").textContent = "هذا الحساب غير مرتبط بأي دور بعد. اطلب من المدير إضافتك من تبويب \"الطاقم الوظيفي\".";
+      openStaffModal();
+      return;
+    }
+    $("publicSite").style.display = "none";
+    $("adminSite").style.display = "block";
+    window.scrollTo(0, 0);
+    applyRoleUi();
+    if(live){
+      note.className = "security-note ok";
+      var roleLabel = { admin:"مدير", reception:"استقبال", doctor:"طبيب" }[currentStaff.role] || currentStaff.role;
+      note.textContent = "متصل بقاعدة البيانات — دخولك الحالي بصفة: " + roleLabel + ".";
+    }else{
+      note.className = "security-note";
+      note.textContent = "وضع التجربة المحلي: الحجوزات والصور تُحفظ على هذا الجهاز فقط ولا تصل لأجهزة الموظفين. اربط Supabase (انظر أعلى الملف) لتفعيل الأدوار والوسائط فعلياً.";
+    }
+    $("logoutBtn").classList.toggle("hidden", !live);
+    activateTab("dash");
+    await refreshAdminData();
+    clearInterval(autoRefresh);
+    if(live) autoRefresh = setInterval(function(){ refreshAdminData(true); }, 60000);
+  }
+  function leaveAdmin(){
+    clearInterval(autoRefresh);
+    $("adminSite").style.display = "none";
+    $("publicSite").style.display = "block";
+    window.scrollTo(0, 0);
+    // إعادة تحميل العيادات والوسائط لتظهر تعديلات الإدارة في الموقع العام
+    renderClinicsGrid(); populateClinicSelect();
+    loadDoctorProfiles().then(renderClinicsGrid);
+    loadGallery().then(renderGallery);
+  }
+  $("backToSite").addEventListener("click", leaveAdmin);
+  $("logoutBtn").addEventListener("click", async function(){
+    try{ await sb.auth.signOut(); }catch(e){}
+    bookingsCache = []; currentStaff = null;
+    leaveAdmin();
+    showToast("تم تسجيل الخروج");
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll(".admin-tab"), function(tab){
+    tab.addEventListener("click", function(){ activateTab(tab.dataset.tab); });
+  });
+
+  /* ---------- لوحة الحجوزات ---------- */
+  async function refreshAdminData(silent){
+    if(!silent) $("bookingsTbody").innerHTML = '<tr><td colspan="8" class="empty-note">جاري تحميل الحجوزات...</td></tr>';
+    try{
+      bookingsCache = await store.list();
+    }catch(e){
+      if(!silent) showToast("تعذر تحميل الحجوزات — تأكد من تسجيل الدخول وصلاحيات القاعدة");
+      if(!silent) bookingsCache = [];
+    }
+    populateFilterClinics();
+    renderStats();
+    renderBookingsTable();
+  }
+  function populateFilterClinics(){
+    var sel = $("filterClinic"), cur = sel.value;
+    sel.innerHTML = '<option value="">كل العيادات</option>';
+    clinics.forEach(function(c){
+      var o = document.createElement("option"); o.value = c.id; o.textContent = c.name; sel.appendChild(o);
+    });
+    sel.value = cur;
+  }
+  function renderStats(){
+    var todayStr = ymd(new Date());
+    var vals = [
+      bookingsCache.length,
+      bookingsCache.filter(function(b){ return b.slotDate === todayStr && b.status !== "cancelled"; }).length,
+      bookingsCache.filter(function(b){ return b.status === "pending"; }).length,
+      bookingsCache.filter(function(b){ return b.status === "confirmed"; }).length
+    ];
+    var cards = document.querySelectorAll("#statGrid .stat-card b");
+    vals.forEach(function(v, i){ cards[i].textContent = v; });
+  }
+  function filteredBookings(){
+    var search = toLatinDigits($("searchInput").value.trim().toLowerCase());
+    var clinicFilter = $("filterClinic").value, statusFilter = $("filterStatus").value, dateFilter = $("filterDate").value;
+    return bookingsCache.filter(function(b){
+      if(clinicFilter && b.clinicId !== clinicFilter) return false;
+      if(statusFilter && b.status !== statusFilter) return false;
+      if(dateFilter && b.slotDate !== dateFilter) return false;
+      if(search){
+        var hay = ((b.name || "") + " " + (b.phone || "") + " " + (b.ref || "")).toLowerCase();
+        if(hay.indexOf(search) === -1) return false;
+      }
+      return true;
+    });
+  }
+  function renderBookingsTable(){
+    var tbody = $("bookingsTbody"), rows = filteredBookings();
+    if(!rows.length){ tbody.innerHTML = '<tr><td colspan="8" class="empty-note">لا توجد حجوزات مطابقة</td></tr>'; return; }
+    tbody.innerHTML = rows.map(function(b){
+      var ref = esc(b.ref), consult = b.type === "consult";
+      return '<tr>' +
+        '<td dir="ltr">' + ref + '</td>' +
+        '<td>' + esc(b.name) + (consult ? '<span class="badge badge-consult">استشارة</span>' : '') + '</td>' +
+        '<td dir="ltr">' + esc(b.phone) + '</td>' +
+        '<td>' + esc(b.clinicName || "—") + '</td>' +
+        '<td>' + esc(b.doctor || "—") + '</td>' +
+        '<td>' + esc(b.slotLabel || "—") + '</td>' +
+        '<td><span class="badge ' + (statusClasses[b.status] || "") + '">' + esc(statusLabels[b.status] || b.status) + '</span></td>' +
+        '<td><div class="row-actions">' +
+          '<button type="button" data-ref="' + ref + '" data-status="confirmed">تأكيد</button>' +
+          '<button type="button" data-ref="' + ref + '" data-status="done">تمت المعاينة</button>' +
+          '<button type="button" data-ref="' + ref + '" data-status="cancelled">إلغاء</button>' +
+          '<button type="button" data-wa="' + ref + '" title="مراسلة المريض عبر واتساب">💬</button>' +
+        '</div></td></tr>';
+    }).join("");
+  }
+
+  $("bookingsTbody").addEventListener("click", async function(e){
+    var waBtn = e.target.closest("button[data-wa]");
+    if(waBtn){
+      var wb = bookingsCache.filter(function(x){ return x.ref === waBtn.getAttribute("data-wa"); })[0];
+      if(!wb) return;
+      var msg;
+      if(wb.status === "confirmed") msg = "مرحباً " + wb.name + "، تم تأكيد " + (wb.type === "consult" ? "طلب استشارتك" : "موعدك في " + wb.clinicName + " مع " + wb.doctor + " بتاريخ " + wb.slotLabel) + ". رقم المرجع: " + wb.ref + ". مستشفى د. حاشد الطبر.";
+      else if(wb.status === "cancelled") msg = "مرحباً " + wb.name + "، تم إلغاء حجزك رقم " + wb.ref + ". يسعدنا خدمتك في أي وقت. مستشفى د. حاشد الطبر.";
+      else msg = "مرحباً " + wb.name + "، بخصوص طلبك رقم " + wb.ref + " في مستشفى د. حاشد الطبر.";
+      window.open(waLink("967" + wb.phone, msg), "_blank", "noopener");
+      return;
+    }
+    var btn = e.target.closest("button[data-ref]");
+    if(!btn) return;
+    var ref = btn.getAttribute("data-ref"), status = btn.getAttribute("data-status");
+    var booking = bookingsCache.filter(function(b){ return b.ref === ref; })[0];
+    if(!booking || booking.status === status) return;
+    if(status === "cancelled" && !confirm("إلغاء حجز " + booking.name + "؟")) return;
+    btn.disabled = true;
+    try{
+      await store.setStatus(ref, status);
+      booking.status = status;
+      renderStats(); renderBookingsTable();
+      showToast("تم تحديث حالة الحجز");
+    }catch(err){
+      showToast("تعذر تحديث الحالة — قد تكون الجلسة انتهت، أعد تسجيل الدخول");
+      btn.disabled = false;
+    }
+  });
+
+  ["searchInput","filterClinic","filterStatus","filterDate"].forEach(function(id){
+    $(id).addEventListener(id === "searchInput" ? "input" : "change", renderBookingsTable);
+  });
+  $("refreshBtn").addEventListener("click", function(){ refreshAdminData(); });
+
+  $("exportBtn").addEventListener("click", function(){
+    var rows = filteredBookings();
+    if(!rows.length){ showToast("لا توجد بيانات للتصدير"); return; }
+    var head = ["المرجع","النوع","المريض","الجنس","العمر","الجوال","العنوان","العيادة","الطبيب","الموعد","الحالة","الملاحظات","طريقة الدفع","رقم الإشعار","تاريخ الإنشاء"];
+    var lines = [head.map(csvCell).join(",")];
+    rows.forEach(function(b){
+      lines.push([
+        b.ref, b.type === "consult" ? "استشارة" : "حجز", b.name, b.gender, (b.ageValue != null ? b.ageValue + " " + (b.ageUnit || "") : ""),
+        b.phone, b.address, b.clinicName, b.doctor, b.slotLabel, statusLabels[b.status] || b.status,
+        b.notes, b.payMethod, b.payRef, b.createdAt ? new Date(b.createdAt).toLocaleString("en-GB") : ""
+      ].map(csvCell).join(","));
+    });
+    var blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type:"text/csv;charset=utf-8;" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "bookings-" + ymd(new Date()) + ".csv";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+  });
+
+  /* ---------- إدارة العيادات والأطباء ---------- */
+  function renderClinicManageList(){
+    var container = $("clinicManageList");
+    $("seedBox").classList.toggle("hidden", !(clinicsAreDefaults && live));
+    container.innerHTML = "";
+    if(clinicsAreDefaults && live){
+      container.innerHTML = '<div class="load-note">لا توجد عيادات محفوظة في قاعدة البيانات بعد. اضغط "استيراد العيادات الافتراضية" أو أضف عيادتك الأولى.</div>';
+      return;
+    }
+    clinics.forEach(function(c){
+      var item = document.createElement("div");
+      item.className = "clinic-manage-item";
+      var tags = c.doctors.map(function(d, di){
+        return '<span>' + esc(d) + ' <button type="button" data-clinic="' + esc(c.id) + '" data-doctor-idx="' + di + '" aria-label="حذف الطبيب">✕</button></span>';
+      }).join("");
+      var photoRow = live
+        ? '<div class="mini-form" style="margin-top:6px;">' +
+            (c.image_url ? '<img src="' + esc(c.image_url) + '" alt="" style="width:60px;height:44px;object-fit:cover;border-radius:6px;">' : '') +
+            '<input type="file" accept="image/*" data-clinic-photo="' + esc(c.id) + '" style="flex:1;">' +
+          '</div>'
+        : "";
+      item.innerHTML =
+        '<div class="cmi-head"><b>' + esc(c.name) + (c.walkin ? ' <small style="color:var(--ink-soft)">(بدون حجز مسبق)</small>' : '') + '</b>' +
+        '<button type="button" class="del-clinic" data-del-clinic="' + esc(c.id) + '">حذف العيادة ✕</button></div>' +
+        '<div class="doctor-tags">' + tags + '</div>' +
+        '<div class="mini-form">' +
+          '<input type="text" maxlength="80" placeholder="اسم طبيب جديد" data-add-doctor-input="' + esc(c.id) + '">' +
+          '<button type="button" data-add-doctor-btn="' + esc(c.id) + '">إضافة طبيب</button>' +
+        '</div>' + photoRow;
+      container.appendChild(item);
+    });
+  }
+  function refreshClinicViews(){
+    renderClinicManageList(); renderClinicsGrid(); populateClinicSelect(); populateFilterClinics();
+  }
+  async function persist(fn, okMsg){
+    try{ await fn(); if(okMsg) showToast(okMsg); return true; }
+    catch(e){
+      showToast("تعذر حفظ التغيير — تأكد من تسجيل الدخول وصلاحيات القاعدة");
+      await loadClinics(); refreshClinicViews();
+      return false;
+    }
+  }
+  function findClinic(id){ return clinics.filter(function(c){ return c.id === id; })[0]; }
+
+  $("clinicManageList").addEventListener("click", async function(e){
+    var t = e.target;
+    var delId = t.getAttribute("data-del-clinic");
+    if(delId){
+      var cl = findClinic(delId);
+      if(!cl || !confirm("حذف عيادة «" + cl.name + "»؟ ستختفي من نموذج الحجز (الحجوزات السابقة تبقى محفوظة).")) return;
+      if(await persist(function(){ return store.deleteClinic(delId); }, "تم حذف العيادة")){
+        clinics = clinics.filter(function(c){ return c.id !== delId; }); refreshClinicViews();
+      }
+      return;
+    }
+    var dClinic = t.getAttribute("data-clinic"), dIdx = t.getAttribute("data-doctor-idx");
+    if(dClinic !== null && dIdx !== null){
+      var c1 = findClinic(dClinic); if(!c1) return;
+      var docName = c1.doctors[+dIdx];
+      if(!confirm("حذف «" + docName + "» من العيادة؟")) return;
+      var updated = { id:c1.id, name:c1.name, desc:c1.desc, walkin:c1.walkin, sort:c1.sort, doctors:c1.doctors.filter(function(_, i){ return i !== +dIdx; }) };
+      if(await persist(function(){ return store.saveClinic(updated); })){ c1.doctors = updated.doctors; refreshClinicViews(); }
+      return;
+    }
+    var addId = t.getAttribute("data-add-doctor-btn");
+    if(addId) addDoctor(addId);
+  });
+  $("clinicManageList").addEventListener("keydown", function(e){
+    if(e.key !== "Enter") return;
+    var id = e.target.getAttribute("data-add-doctor-input");
+    if(id) addDoctor(id);
+  });
+  $("clinicManageList").addEventListener("change", async function(e){
+    var input = e.target.closest("input[data-clinic-photo]");
+    if(!input || !input.files || !input.files[0]) return;
+    var clinicId = input.getAttribute("data-clinic-photo");
+    var c = findClinic(clinicId);
+    if(!c) return;
+    input.disabled = true;
+    try{
+      var url = await uploadMedia(input.files[0], "clinics");
+      var updated = { id:c.id, name:c.name, desc:c.desc, walkin:c.walkin, sort:c.sort, doctors:c.doctors, image_url:url };
+      await store.saveClinic(updated);
+      c.image_url = url;
+      showToast("تم تحديث صورة العيادة");
+      renderClinicManageList(); renderClinicsGrid();
+    }catch(err){
+      showToast(err && err.message === "media-too-large" ? "الملف أكبر من 50 ميجابايت" : "تعذر رفع الصورة");
+      input.disabled = false;
+    }
+  });
+  async function addDoctor(clinicId){
+    var input = document.querySelector('[data-add-doctor-input="' + clinicId.replace(/"/g, '\\"') + '"]');
+    var name = input ? input.value.trim() : "";
+    var c = findClinic(clinicId);
+    if(!name || !c) return;
+    if(c.doctors.indexOf(name) > -1){ showToast("هذا الطبيب موجود مسبقاً في العيادة"); return; }
+    var updated = { id:c.id, name:c.name, desc:c.desc, walkin:c.walkin, sort:c.sort, doctors:c.doctors.concat([name]) };
+    if(await persist(function(){ return store.saveClinic(updated); }, "تمت إضافة الطبيب")){ c.doctors = updated.doctors; refreshClinicViews(); }
+  }
+
+  $("addClinicBtn").addEventListener("click", async function(){
+    var name = $("newClinicName").value.trim(), desc = $("newClinicDesc").value.trim();
+    if(!name){ showToast("أدخل اسم العيادة"); return; }
+    var maxSort = clinics.reduce(function(m, c){ return Math.max(m, c.sort || 0); }, 0);
+    var c = { id:"c" + Date.now(), name:name, desc:desc || "عيادة جديدة", doctors:[], walkin:$("newClinicWalkin").checked, sort:maxSort + 1 };
+    if(await persist(function(){ return store.saveClinic(c); }, "تمت إضافة العيادة")){
+      if(clinicsAreDefaults){ clinics = []; clinicsAreDefaults = false; }
+      clinics.push(c);
+      $("newClinicName").value = ""; $("newClinicDesc").value = ""; $("newClinicWalkin").checked = false;
+      refreshClinicViews();
+    }
+  });
+  $("seedBtn").addEventListener("click", async function(){
+    if(!confirm("استيراد العيادات الافتراضية إلى قاعدة البيانات؟")) return;
+    var ok = await persist(async function(){ for(var i=0;i<DEFAULT_CLINICS.length;i++) await store.saveClinic(DEFAULT_CLINICS[i]); }, "تم استيراد العيادات");
+    if(ok){ await loadClinics(); refreshClinicViews(); }
+  });
+
+  /* ---------- الصور والفيديو: معرض الصفحة الرئيسية ---------- */
+  function allDoctorNames(){
+    var set = {}, out = [];
+    clinics.forEach(function(c){ c.doctors.forEach(function(d){ if(!set[d]){ set[d] = true; out.push(d); } }); });
+    return out.sort();
+  }
+  function populateDoctorPhotoSelect(){
+    [$("docPhotoSelect"), $("teamDoctorName")].forEach(function(sel){
+      var cur = sel.value;
+      sel.innerHTML = '<option value="">-- اختر الطبيب --</option>' +
+        allDoctorNames().map(function(d){ return '<option value="' + esc(d) + '">' + esc(d) + '</option>'; }).join("");
+      sel.value = cur;
+    });
+  }
+  $("docPhotoSelect").addEventListener("change", function(){
+    var prof = doctorProfiles[this.value];
+    $("docPhotoBio").value = prof ? (prof.bio || "") : "";
+  });
+
+  async function renderGalleryManageList(){
+    var box = $("galleryManageList");
+    box.innerHTML = '<div class="load-note">جاري التحميل...</div>';
+    await loadGallery();
+    if(!galleryItems.length){ box.innerHTML = '<div class="load-note">لا توجد عناصر في المعرض بعد.</div>'; return; }
+    box.innerHTML = galleryItems.map(function(g){
+      var thumb = g.kind === "video"
+        ? '<video class="thumb" src="' + esc(g.url) + '" muted></video>'
+        : '<img class="thumb" src="' + esc(g.url) + '" alt="">';
+      return '<div class="gallery-item">' + thumb +
+        '<div class="gi-body"><span>' + esc(g.title || (g.kind === "video" ? "فيديو" : "صورة")) + '</span>' +
+        '<button type="button" data-del-media="' + g.id + '">حذف</button></div></div>';
+    }).join("");
+  }
+  $("galleryManageList").addEventListener("click", async function(e){
+    var btn = e.target.closest("button[data-del-media]");
+    if(!btn) return;
+    if(!confirm("حذف هذا العنصر من المعرض؟")) return;
+    var id = Number(btn.getAttribute("data-del-media"));
+    var item = galleryItems.filter(function(g){ return g.id === id; })[0];
+    btn.disabled = true;
+    try{
+      var idx = item.url.indexOf("/object/public/media/");
+      if(idx > -1){
+        var path = item.url.slice(idx + "/object/public/media/".length);
+        try{ await sb.storage.from("media").remove([path]); }catch(e2){}
+      }
+      var del = await sb.from("media_gallery").delete().eq("id", id);
+      if(del.error) throw del.error;
+      showToast("تم حذف العنصر");
+      await renderGalleryManageList();
+      await loadGallery(); renderGallery();
+    }catch(err){ showToast("تعذر الحذف — تحقق من صلاحياتك"); btn.disabled = false; }
+  });
+
+  $("mediaUploadBtn").addEventListener("click", async function(){
+    var errEl = $("mediaErr"); errEl.textContent = "";
+    var file = $("mediaFile").files[0];
+    if(!file){ errEl.textContent = "اختر ملف صورة أو فيديو أولاً"; return; }
+    var btn = this; btn.disabled = true;
+    try{
+      var kind = file.type.indexOf("video") === 0 ? "video" : "image";
+      var url = await uploadMedia(file, "gallery");
+      var ins = await sb.from("media_gallery").insert({ title:$("mediaTitle").value.trim(), url:url, kind:kind });
+      if(ins.error) throw ins.error;
+      showToast("تمت الإضافة إلى المعرض");
+      $("mediaTitle").value = ""; $("mediaFile").value = "";
+      await renderGalleryManageList();
+      await loadGallery(); renderGallery();
+    }catch(err){
+      errEl.textContent = err && err.message === "media-too-large" ? "الملف أكبر من 50 ميجابايت" : "تعذر رفع الملف";
+    }
+    btn.disabled = false;
+  });
+
+  $("docPhotoBtn").addEventListener("click", async function(){
+    var errEl = $("docPhotoErr"); errEl.textContent = "";
+    var doctorName = $("docPhotoSelect").value;
+    if(!doctorName){ errEl.textContent = "اختر اسم الطبيب"; return; }
+    var file = $("docPhotoFile").files[0];
+    var btn = this; btn.disabled = true;
+    try{
+      var photoUrl = doctorProfiles[doctorName] ? doctorProfiles[doctorName].photo_url : null;
+      if(file) photoUrl = await uploadMedia(file, "doctors");
+      var row = { doctor_name:doctorName, photo_url:photoUrl, bio:$("docPhotoBio").value.trim() || null, updated_at:new Date().toISOString() };
+      var up = await sb.from("doctor_profiles").upsert(row, { onConflict:"doctor_name" });
+      if(up.error) throw up.error;
+      showToast("تم حفظ بيانات الطبيب");
+      $("docPhotoFile").value = "";
+      await loadDoctorProfiles(); renderClinicsGrid();
+    }catch(err){
+      errEl.textContent = err && err.message === "media-too-large" ? "الملف أكبر من 50 ميجابايت" : "تعذر الحفظ — تحقق من صلاحياتك";
+    }
+    btn.disabled = false;
+  });
+
+  /* ---------- الطاقم الوظيفي ---------- */
+  $("teamRole").addEventListener("change", function(){
+    $("teamDoctorName").classList.toggle("hidden", this.value !== "doctor");
+  });
+  async function refreshTeamList(){
+    var tbody = $("teamTbody");
+    tbody.innerHTML = '<tr><td colspan="4" class="empty-note">جاري التحميل...</td></tr>';
+    try{
+      var r = await sb.from("staff").select("*").order("created_at");
+      if(r.error) throw r.error;
+      if(!r.data.length){ tbody.innerHTML = '<tr><td colspan="4" class="empty-note">لا يوجد موظفون بعد</td></tr>'; return; }
+      var roleLabel = { admin:"مدير", reception:"استقبال", doctor:"طبيب" };
+      tbody.innerHTML = r.data.map(function(s){
+        return '<tr><td>' + esc(s.name || "—") + '</td>' +
+          '<td><span class="role-badge role-' + esc(s.role) + '">' + esc(roleLabel[s.role] || s.role) + '</span></td>' +
+          '<td>' + esc(s.doctor_name || "—") + '</td>' +
+          '<td><button type="button" class="btn-sm" data-del-staff="' + esc(s.id) + '">حذف</button></td></tr>';
+      }).join("");
+    }catch(e){ tbody.innerHTML = '<tr><td colspan="4" class="empty-note">تعذر تحميل الطاقم — هذا التبويب متاح للمدير فقط</td></tr>'; }
+  }
+  $("teamTbody").addEventListener("click", async function(e){
+    var btn = e.target.closest("button[data-del-staff]");
+    if(!btn) return;
+    if(!confirm("حذف هذا الموظف من النظام؟ (حساب الدخول نفسه يبقى في Supabase، ولن يعود له أي صلاحية هنا)")) return;
+    btn.disabled = true;
+    try{
+      var del = await sb.from("staff").delete().eq("id", btn.getAttribute("data-del-staff"));
+      if(del.error) throw del.error;
+      showToast("تم حذف الموظف");
+      refreshTeamList();
+    }catch(err){ showToast("تعذر الحذف"); btn.disabled = false; }
+  });
+  $("teamAddBtn").addEventListener("click", async function(){
+    var errEl = $("teamErr"); errEl.textContent = "";
+    var uid = $("teamUid").value.trim();
+    var name = $("teamName").value.trim();
+    var role = $("teamRole").value;
+    var doctorName = role === "doctor" ? $("teamDoctorName").value : null;
+    if(!/^[0-9a-f-]{20,36}$/i.test(uid)){ errEl.textContent = "الصق User UID الصحيح من Supabase"; return; }
+    if(!name){ errEl.textContent = "أدخل اسم الموظف"; return; }
+    if(role === "doctor" && !doctorName){ errEl.textContent = "اختر اسم الطبيب المرتبط بهذا الحساب"; return; }
+    var btn = this; btn.disabled = true;
+    try{
+      var up = await sb.from("staff").upsert({ id:uid, name:name, role:role, doctor_name:doctorName }, { onConflict:"id" });
+      if(up.error) throw up.error;
+      showToast("تم حفظ الموظف");
+      $("teamUid").value = ""; $("teamName").value = ""; $("teamDoctorName").value = "";
+      refreshTeamList();
+    }catch(err){ errEl.textContent = "تعذر الحفظ — تأكد أن UID صحيح وغير مستخدم لدور آخر"; }
+    btn.disabled = false;
+  });
+
+  /* ---------- ملفي كطبيب ---------- */
+  async function loadOwnProfile(){
+    if(!currentStaff || !currentStaff.doctor_name) return;
+    var errEl = $("profileErr"); errEl.textContent = "";
+    try{
+      var r = await sb.from("doctor_profiles").select("*").eq("doctor_name", currentStaff.doctor_name).maybeSingle();
+      if(r.error) throw r.error;
+      var prof = r.data;
+      $("profileBio").value = prof ? (prof.bio || "") : "";
+      var img = $("profilePhotoPreview");
+      if(prof && prof.photo_url){ img.src = prof.photo_url; img.style.display = "block"; }
+      else{ img.style.display = "none"; }
+    }catch(e){ errEl.textContent = "تعذر تحميل ملفك الشخصي"; }
+  }
+  $("profileSaveBtn").addEventListener("click", async function(){
+    var errEl = $("profileErr"); errEl.textContent = "";
+    if(!currentStaff || !currentStaff.doctor_name){ errEl.textContent = "حسابك غير مرتبط باسم طبيب — راجع المدير"; return; }
+    var file = $("profilePhotoFile").files[0];
+    var btn = this; btn.disabled = true;
+    try{
+      var photoUrl = null;
+      var existing = await sb.from("doctor_profiles").select("photo_url").eq("doctor_name", currentStaff.doctor_name).maybeSingle();
+      if(existing.data) photoUrl = existing.data.photo_url;
+      if(file) photoUrl = await uploadMedia(file, "doctors");
+      var row = { doctor_name:currentStaff.doctor_name, photo_url:photoUrl, bio:$("profileBio").value.trim() || null, updated_at:new Date().toISOString() };
+      var up = await sb.from("doctor_profiles").upsert(row, { onConflict:"doctor_name" });
+      if(up.error) throw up.error;
+      showToast("تم حفظ ملفك الشخصي");
+      $("profilePhotoFile").value = "";
+      await loadOwnProfile();
+      await loadDoctorProfiles();
+    }catch(err){
+      errEl.textContent = err && err.message === "media-too-large" ? "الملف أكبر من 50 ميجابايت" : "تعذر الحفظ";
+    }
+    btn.disabled = false;
+  });
+
+  /* ---------- قائمة الجوال ---------- */
+  $("menuBtn").addEventListener("click", function(){
+    var nav = $("mainNav"), open = nav.classList.toggle("open");
+    $("menuBtn").setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  $("mainNav").addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ $("mainNav").classList.remove("open"); $("menuBtn").setAttribute("aria-expanded", "false"); }
+  });
+
+  /* ---------- التشغيل ---------- */
+  (async function boot(){
+    applyConfig();
+    await Promise.all([loadClinics(), loadDoctorProfiles(), loadGallery()]);
+    renderClinicsGrid();
+    renderGallery();
+    populateClinicSelect();
+    initBookingForm();
+    initTrack();
+    setReqMode();
+  })();
+})();
+</script>
+</body>
+</html>
